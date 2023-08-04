@@ -17,6 +17,10 @@ body {
 abbr {
   text-decoration: none;
 }
+a {
+  text-decoration: none;
+  color: darkslategray;
+}
 p {
   margin-block-start: 0;
   margin-block-end: 1rem;

@@ -27,7 +27,7 @@ echo " Build new image terrabrasilis/queimadas-portal:${TAG_VERSION} "
 echo "/######################################################################/"
 echo
 
-docker build $NO_CACHE -t "terrabrasilis/queimadas-portal:${TAG_VERSION}" -f docker/Dockerfile .
+docker build $NO_CACHE -t "terrabrasilis/queimadas-portal:${TAG_VERSION}" -f Dockerfile .
 
 # send to dockerhub
 echo 

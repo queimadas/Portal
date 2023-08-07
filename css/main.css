@@ -1,10 +1,10 @@
 @import url("https://fonts.googleapis.com/css2?family=Rawline:wght@300;400;500;700&display=swap");
 
+/* Define as variáveis para todo documento */
 :root {
-  /* Define as variÃ¡veis para todo documento */
   --cor-do-texto: #555;
 }
-
+/* "Reset" básico para todo documento */
 html,
 body {
   margin: 0;
@@ -14,12 +14,10 @@ body {
   color: var(--cor-do-texto);
   background-color: #fff;
 }
+
+/* Define estilos genéricos para todo documento */
 abbr {
   text-decoration: none;
-}
-a {
-  text-decoration: none;
-  color: darkslategray;
 }
 p {
   margin-block-start: 0;
@@ -34,32 +32,32 @@ h1 {
   line-height: 1.4;
 }
 h2 {
-  /* Utilizado para os tÃ­tulos dos "boxes" */
+  /* Utilizado para os tí­tulos dos "boxes" */
   font-size: 1.5rem;
   font-weight: 500;
 }
 .fas {
-  /* Define as propriedades dos Ã­cones dos "boxes" */
+  /* Define as propriedades dos í­cones dos "boxes" */
   color: #f90;
   font-size: 4rem;
   margin-top: 2rem;
 }
 
-/* Define o comportamento do "container": ocupa, no mÃ­nimo toda altura do navegador. */
+/* Define o comportamento do "container": ocupa, no mí­nimo toda altura do navegador. */
 .container {
   display: flex;
   flex-direction: column;
   min-height: 100vh;
 }
 
-/* Define o comportamento das 3 principais Ã¡reas: topo, conteÃºdo principal e rodapÃ©. */
+/* Define o comportamento das 3 principais áreas: topo, conteúdo principal e rodapé. */
 header,
 main,
 footer {
   padding: 1rem 0;
 }
 
-/* Define o comportamento do topo */
+/* Define os estilos do topo */
 header {
   box-shadow: 0 3px 6px 0 rgba(0, 0, 0, 0.16);
 }
@@ -76,7 +74,7 @@ header img {
   margin-top: 0.5rem;
 }
 
-/* Define o comportamento da Ã¡rea de conteÃºdo */
+/* Define os estilos da área de conteúdos */
 main {
   flex-grow: 1;
   display: flex;
@@ -92,6 +90,7 @@ main {
   background-position: right;
   height: 216px;
   padding: 16px;
+  margin-bottom: 1rem;
   display: flex;
   align-items: center;
   box-sizing: border-box;
@@ -107,7 +106,7 @@ main {
   flex-direction: row;
   flex-wrap: wrap;
 }
-.boxes > div {
+.botao {
   box-sizing: border-box;
   flex-grow: 1;
   flex-basis: 100%;
@@ -121,15 +120,31 @@ main {
   flex-direction: column;
   text-align: center;
   border-radius: 15px;
+  text-decoration: none;
+  color: var(--cor-do-texto);
   transform: scale(1);
   transition: background-color 0.2s ease-in-out, transform 0.2s ease-in-out;
 }
-.boxes > div:hover {
+.botao:hover {
   background-color: #fff;
   transform: scale(1.12);
+  color: #444;
 }
 
-/* Define o comportamento do rodapÃ© */
+/* Define os estilos do texto de avisos */
+.info {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 1rem 0;
+}
+.info .fas {
+  color: #ccc;
+  font-size: 2.2rem;
+  margin: 0 8px 0 0;
+}
+
+/* Define os estilos do rodapé */
 footer {
   background-color: #555;
 }
@@ -142,9 +157,9 @@ footer > div {
   color: #fff;
 }
 
-/* Define comportamento para telas maiores =========================================================================== */
+/* Define estilos para telas maiores =========================================================================== */
 @media (min-width: 768px) {
-  /* Define o comportamento do topo */
+  /* Define os estilos do topo */
   header > div {
     flex-direction: row;
     justify-content: space-between;
@@ -155,7 +170,7 @@ footer > div {
     margin-top: 0;
   }
 
-  /* Define o comportamento da Ã¡rea de conteÃºdo */
+  /* Define os estilos para área de conteúdo */
   main {
     width: 90%;
     padding: 0 1rem;
@@ -172,17 +187,16 @@ footer > div {
     color: var(--cor-do-texto);
     text-align: left;
   }
-
-  .boxes > div {
+  .botao {
     flex-basis: 20%;
     margin-right: 2rem;
     min-height: 16rem;
   }
-  .boxes div:nth-child(3) {
+  .boxes .botao:nth-child(3) {
     margin-right: 0;
   }
 
-  /* Define o comportamento do rodapÃ© */
+  /* Define os estilos do rodapé */
   footer > div {
     width: 90%;
   }

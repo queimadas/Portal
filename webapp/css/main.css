@@ -42,6 +42,15 @@ h2 {
   font-size: 4rem;
   margin-top: 2rem;
 }
+.icone-composto {
+  display: flex;
+  align-items: baseline;
+}
+.icone-composto-lateral {
+  color: #f90;
+  font-size: 2.2rem;
+  margin-left: 3px;
+}
 
 /* Define o comportamento do "container": ocupa, no mí­nimo toda altura do navegador. */
 .container {

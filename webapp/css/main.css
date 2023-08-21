@@ -34,6 +34,7 @@ footer h2 {
 /* Define estilos genéricos para todo documento */
 abbr {
   text-decoration: none;
+  text-transform: uppercase;
 }
 p {
   margin: 0 0 1rem;

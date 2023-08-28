@@ -4,6 +4,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Programa Queimadas &bull; INPE</title>
+    <link rel="shortcut icon" href="img/favicon-qmd.png" />
     <link
       href="https://use.fontawesome.com/releases/v6.4.2/css/all.css"
       rel="stylesheet"
@@ -31,25 +32,29 @@
 
     <main>
       <!-- Banner Informativo Principal -->
-      <aside aria-label="Atenção!" class="banner-informativo">
-        <h2>Atenção!</h2>
-        <p>A plataforma Queimadas está em manutenção.</p>
-        <p>O restabelecimento completo do Portal está em andamento.</p>
+
+      <aside aria-label="Atenção!" class="main-banner">
+        <div class="main-banner-animation">
+          <h2>Novo Portal do Programa Queimadas</h2>
+          <p>
+            Estamos aprimorando as formas de visualização e acesso aos dados.
+          </p>
+        </div>
       </aside>
 
       <!-- Boxe BD Queimadas -->
-      <nav>
-        <h1>Produtos</h1>
+      <div class="tile-start-section">
+        <h1>Sistemas</h1>
+      </div>
+      <nav aria-label="Sistemas">
         <a
           href="http://terrabrasilis.dpi.inpe.br/queimadas/bdqueimadas/"
           target="_blank"
-          class="botao"
-          ><div class="botao-logo">
-            <i class="fas fa-database"></i>
+          class="box-btn"
+          ><div class="box-btn-logo">
+            <i class="box-btn-logo-icon fas fa-database"></i>
           </div>
-          <h2>
-            <abbr title="Banco de Dados de Queimadas">BD Queimadas</abbr>
-          </h2>
+          <h2><abbr title="Banco de Dados">BD</abbr> Queimadas</h2>
           <p>
             Acesso ao acervo de focos de fogo de todos os satélites recebidos
             pelo
@@ -63,7 +68,7 @@
         <a
           href="http://terrabrasilis.dpi.inpe.br/app/dashboard/fires/biomes/aggregated/"
           target="_blank"
-          class="botao"
+          class="box-btn"
           ><div>
             <img
               src="img/logo-desmatamento-car.png"
@@ -85,7 +90,7 @@
         <a
           href="http://terrabrasilis.dpi.inpe.br/ams/"
           target="_blank"
-          class="botao"
+          class="box-btn"
           ><div>
             <img
               src="img/logo-deter.png"
@@ -108,10 +113,10 @@
         <a
           href="http://terrabrasilis.dpi.inpe.br/queimadas/situacao-atual/situacao_atual/"
           target="_blank"
-          class="botao"
+          class="box-btn"
         >
-          <div class="botao-logo">
-            <i class="fas fa-chart-pie"></i>
+          <div class="box-btn-logo">
+            <i class="box-btn-logo-icon fas fa-chart-pie"></i>
           </div>
           <h2>Situação atual</h2>
           Informações sobre a situação atual de queimadas, apresentada por meio
@@ -122,10 +127,10 @@
         <a
           href="http://terrabrasilis.dpi.inpe.br/queimadas/situacao-atual/estatisticas/estatisticas_paises/"
           target="_blank"
-          class="botao"
+          class="box-btn"
         >
-          <div class="botao-logo">
-            <i class="fas fa-solid fa-earth-americas"></i>
+          <div class="box-btn-logo">
+            <i class="box-btn-logo-icon fa-solid fa-earth-americas"></i>
           </div>
           <h2>Estatísticas Países</h2>
           <p>
@@ -138,10 +143,10 @@
         <a
           href="http://terrabrasilis.dpi.inpe.br/queimadas/situacao-atual/estatisticas/estatisticas_estados/"
           target="_blank"
-          class="botao"
+          class="box-btn"
         >
-          <div class="botao-logo">
-            <i class="fas fa-solid fa-chart-simple"></i>
+          <div class="box-btn-logo">
+            <i class="box-btn-logo-icon fa-solid fa-chart-simple"></i>
           </div>
           <h2>Estatísticas Estados</h2>
           <p>
@@ -149,23 +154,28 @@
             referência, por estado, em cada mês, desde 1998.
           </p>
         </a>
+      </nav>
 
+      <div class="tile-start-section">
+        <h1>Dados para download</h1>
+      </div>
+      <nav aria-label="Dados para download">
         <!-- Boxe Arquivos CSV -->
         <a
           href="https://dataserver-coids.inpe.br/queimadas/queimadas/focos/csv/"
           target="_blank"
-          class="botao"
+          class="box-btn"
         >
-          <div class="botao-logo">
-            <i class="fas fa-file-csv"></i>
+          <div class="box-btn-logo">
+            <i class="box-btn-logo-icon fas fa-file-csv"></i>
           </div>
           <h2>
             Arquivos
             <abbr title="Comma-Separated Values">CSV</abbr>
           </h2>
           <p>
-            Obtenha informações mais recentes em tempo quase real. Os arquivos
-            são atualizados a cada 10 minutos.
+            Obtenha as informações mais recentes sobre focos de queimadas em
+            tempo quase real. Arquivos atualizados a cada 10 minutos.
           </p>
         </a>
 
@@ -173,10 +183,10 @@
         <a
           href="https://dataserver-coids.inpe.br/queimadas/queimadas/focos/kml/"
           target="_blank"
-          class="botao"
-          ><div class="botao-logo icone-composto">
-            <i class="fas fa-regular fa-file"></i>
-            <i class="icone-composto-lateral fa-brands fa-google"></i>
+          class="box-btn"
+          ><div class="box-btn-logo">
+            <i class="box-btn-logo-icon fa-regular fa-file"></i>
+            <i class="box-btn-logo-icon-cmp fa-brands fa-google"></i>
           </div>
 
           <h2>
@@ -192,12 +202,12 @@
         <a
           href="https://dataserver-coids.inpe.br/queimadas/queimadas/area_queimada/AQ1km/"
           target="_blank"
-          class="botao"
-          ><div class="icone-composto">
-            <div class="botao-logo">
-              <i class="fas fa-solid fa-fire"></i>
-            </div>
+          class="box-btn"
+        >
+          <div class="box-btn-logo">
+            <i class="box-btn-logo-icon fa-solid fa-fire"></i>
           </div>
+
           <h2>
             Área Queimada &bull; <abbr title="Área Queimada 1km">AQ1km</abbr>
           </h2>
@@ -211,21 +221,60 @@
         <a
           href="https://dataserver-coids.inpe.br/queimadas/queimadas/riscofogo_meteorologia/"
           target="_blank"
-          class="botao"
-          ><div class="icone-composto">
-            <div class="botao-logo">
-              <i class="fas fa-solid fa-fire"></i>
-              <i
-                class="fas icone-composto-lateral fa-solid fa-hand-holding-droplet"
-              ></i>
-            </div>
+          class="box-btn"
+        >
+          <div class="box-btn-logo">
+            <i class="box-btn-logo-icon fa-solid fa-fire"></i>
+            <i
+              class="box-btn-logo-icon-cmp fa-solid fa-hand-holding-droplet"
+            ></i>
           </div>
           <h2>Risco de Fogo e Meteorologia</h2>
           <p>Download de arquivos de Risco de Fogo e Meteorologia.</p>
         </a>
       </nav>
 
+      <div class="tile-start-section">
+        <h1>Informações</h1>
+      </div>
+      <nav aria-label="Informações">
+        <!-- Boxe Publicações e Impacto -->
+        <a
+          href="https://dataserver-coids.inpe.br/queimadas/queimadas/Publicacoes-Impacto/"
+          target="_blank"
+          class="box-btn"
+        >
+          <div class="box-btn-logo">
+            <i class="box-btn-logo-icon fa-regular fa-newspaper"></i>
+          </div>
+          <h2>Publicações e Impacto</h2>
+          <p>
+            Publicações referenciadas do Programa Queimadas e de terceiros que
+            usam nossos dados e divulgações na mídia em geral.
+          </p>
+        </a>
+
+        <!-- Exemplos e Validações -->
+        <a
+          href="https://dataserver-coids.inpe.br/queimadas/queimadas/Exemplos-Validacao/"
+          target="_blank"
+          class="box-btn"
+        >
+          <div class="box-btn-logo">
+            <i class="box-btn-logo-icon fa-solid fa-check-to-slot"></i>
+          </div>
+          <h2>Exemplos e Validações</h2>
+          <p>
+            Figuras e materiais didáticos que ilustram o monitoramento de
+            queimadas.
+          </p>
+        </a>
+      </nav>
+
       <!-- Área de Informações Complementares -->
+      <div class="tile-start-section">
+        <i class="fa-solid fa-triangle-exclamation"></i>
+      </div>
       <aside aria-label="Informações complementares" class="info">
         <h2>Informações complementares</h2>
         <i class="fas fa-exclamation-circle"></i

@@ -1,6 +1,7 @@
+/* Imports */
 @import url("https://fonts.googleapis.com/css2?family=Rawline:wght@300;400;500;600;700&display=swap");
 
-/* Define as variáveis para todo documento */
+/* variables */
 :root {
   --cor-do-texto: #555;
   --cor-dos-icones: #f90;
@@ -8,7 +9,8 @@
   --largura-tela-gde: 90%;
   --largura-max: 1176px;
 }
-/* "Reset" básico para todo documento */
+
+/* Reset */
 html,
 body {
   margin: 0;
@@ -22,13 +24,15 @@ body {
   flex-direction: column;
   min-height: 100vh;
 }
-body > h1,
-.info h2,
-footer h2 {
+
+/* Hidden Titles */
+.page-title,
+.info__title,
+.footer__title {
   display: none;
 }
 
-/* Define estilos genéricos para todo documento */
+/* Generic Styles */
 abbr {
   text-decoration: none;
   text-transform: uppercase;
@@ -42,18 +46,18 @@ h2 {
   margin: 0.5rem 0;
 }
 
-/* Define os estilos das três principais áreas: topo, conteúdo principal e rodapé. */
-header,
-main,
-footer {
+/* Main Sections */
+.header,
+.main-content,
+.footer {
   padding: 1rem 0;
 }
 
-/* Define os estilos do topo */
-header {
+/* Header Styles */
+.header {
   box-shadow: 0 3px 6px 0 rgba(0, 0, 0, 0.16);
 }
-header > div {
+.header__logo-container {
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -61,13 +65,13 @@ header > div {
   margin: 0 auto;
   width: var(--largura-tela-peq);
 }
-header img {
+.header__logo-container img {
   max-height: 3rem;
   margin-top: 0.5rem;
 }
 
-/* Define os estilos da área de conteúdo */
-main {
+/* Main Content Styles */
+.main-content {
   flex-grow: 1;
   display: flex;
   flex-direction: column;
@@ -77,6 +81,7 @@ main {
   width: var(--largura-tela-peq);
 }
 
+/* Banner Styles */
 .main-banner {
   height: 216px;
   overflow: hidden;
@@ -133,6 +138,7 @@ main {
   }
 }
 
+/* Navigation Styles */
 nav {
   display: flex;
   flex-direction: row;
@@ -162,7 +168,7 @@ nav {
   transform: scale(1.12);
   color: #444;
 }
-.box-btn-logo {
+.box-btn__symbol {
   background-color: #fff;
   display: flex;
   align-items: center;
@@ -172,16 +178,16 @@ nav {
   height: 120px;
   border-radius: 50%;
 }
-.box-btn-logo-icon {
+.box-btn__symbol__icon {
   color: var(--cor-dos-icones);
   font-size: 4rem;
 }
-.box-btn-logo-icon-cmp {
+.box-btn__symbol__icon-add {
   color: var(--cor-dos-icones);
   font-size: 2.2rem;
 }
 
-/*Define os estilo da divisória de sessão */
+/* Section titles estyles */
 .tile-start-section {
   display: flex;
   align-items: center;
@@ -221,7 +227,7 @@ nav {
   margin-right: 10px;
 }
 
-/* Define os estilos do texto de avisos */
+/* Information text styles */
 .info {
   display: flex;
   align-items: center;
@@ -234,7 +240,7 @@ nav {
   margin: 0 8px 0 0;
 }
 
-/* Define os estilos do rodapé */
+/* Footer styles */
 footer {
   background-color: #555;
 }
@@ -247,25 +253,27 @@ footer > div {
   color: #fff;
 }
 
-/* Define estilos para telas médias =========================================================================== */
+/* Media Queries for Medium Screens =========================================================================== */
 @media (min-width: 768px) {
-  /* Define os estilos do topo */
-  header > div {
+  /* Header styles */
+  .header__logo-container {
     flex-direction: row;
     justify-content: space-between;
     width: var(--largura-tela-gde);
   }
-  header img {
+  .header__logo-container img {
     max-height: 4rem;
     margin-top: 0;
   }
 
-  /* Define os estilos para área de conteúdo */
+  /* Main content styles */
   main {
     width: var(--largura-tela-gde);
     padding: 0 1rem;
   }
-
+  .main-banner {
+    border-radius: 15px;
+  }
   .main-banner-animation {
     padding: 0 3rem 0 12rem;
     align-items: end;
@@ -289,13 +297,13 @@ footer > div {
     max-width: calc(50% - 1rem);
   }
 
-  /* Define os estilos do rodapé */
+  /* Footer styles */
   footer > div {
     width: var(--largura-tela-gde);
   }
 }
 
-/* Define estilos para telas grandes =========================================================================== */
+/* Media Queries for Large Screens =========================================================================== */
 @media (min-width: 1024px) {
   .main-banner-animation {
     padding: 0 2rem 0 14rem;
@@ -317,7 +325,7 @@ footer > div {
     max-width: calc(33.3% - 1.33rem);
   }
 
-  /*Define os estilo da divisória de sessão */
+  /* Section titles estyles */
 
   .tile-start-section h1 {
     font-size: 2rem;

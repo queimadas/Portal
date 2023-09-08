@@ -228,16 +228,27 @@ nav {
 }
 
 /* Information text styles */
-.info {
+.info,
+.back-home {
   display: flex;
   align-items: center;
   justify-content: center;
   margin: 1rem 0;
 }
-.info .fas {
+.info i,
+.back-home i {
   color: #ccc;
   font-size: 2.2rem;
   margin: 0 8px 0 0;
+}
+
+/* Back to home styles */
+.back-home a {
+  color: var(--cor-do-texto);
+  text-decoration: none;
+}
+.back-home a:hover {
+  text-decoration: underline dotted var(--cor-do-texto);
 }
 
 /* Footer styles */

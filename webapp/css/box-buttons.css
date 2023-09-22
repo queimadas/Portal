@@ -1,0 +1,62 @@
+/* box-button Styles */
+.box-button-container {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  gap: 2rem;
+  margin: 1rem 0;
+}
+.box-button {
+  box-sizing: border-box;
+  flex-grow: 1;
+  padding: 1rem;
+  background-color: var(--color-light-gray);
+  box-shadow: 0 3px 6px 0 rgba(0, 0, 0, 0.16);
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  text-align: center;
+  border-radius: 15px;
+  text-decoration: none;
+  color: var(--text-color-primary);
+  transform: scale(1);
+  transition: background-color 0.2s ease-in-out, transform 0.2s ease-in-out;
+}
+.box-button:hover {
+  background-color: var(--color-light-primary);
+  transform: scale(1.12);
+}
+.box-button > div {
+  background-color: var(--color-light-primary);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  column-gap: 0.2rem;
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+}
+.box-button__icon {
+  color: var(--color-primary);
+  font-size: 4rem;
+}
+.box-button__icon-add {
+  color: var(--color-primary);
+  font-size: 2.2rem;
+}
+
+/* Styles for Medium Screens =========================================================================== */
+@media (min-width: 768px) {
+  .box-button {
+    flex-basis: 40%;
+    max-width: calc(50% - 1rem);
+  }
+}
+
+/* Styles for Large Screens =========================================================================== */
+@media (min-width: 1024px) {
+  .box-button {
+    flex-basis: 30%;
+    max-width: calc(33.3% - 1.33rem);
+  }
+}

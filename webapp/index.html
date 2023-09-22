@@ -10,6 +10,9 @@
       rel="stylesheet"
     />
     <link rel="stylesheet" href="css/main.css" />
+    <link rel="stylesheet" href="css/header-gov.css" />
+    <link rel="stylesheet" href="css/main-banners.css" />
+    <link rel="stylesheet" href="css/box-buttons.css" />
   </head>
 
   <body>
@@ -22,17 +25,63 @@
       >
     </h1>
     <header class="header">
-      <div class="header__logo-container">
+      <div class="header__barra-gov">
+        <div>
+          <div class="header__barra-gov__logo">
+            <a href="https://www.gov.br/pt-br" target="_blank"
+              ><img
+                src="img/govbr-logo-large.png"
+                alt="Logotipo Portal do Governo Federal"
+              />
+            </a>
+          </div>
+          <div class="header__barra-gov__ministry">
+            <a href="https://www.gov.br/mcti/" target="_blank"
+              >Ministério da Ciência, Tecnologia e Inovação</a
+            >
+          </div>
+        </div>
+        <nav class="header__barra-gov__links" aria-label="Links Rápidos">
+          <ul>
+            <li>
+              <a
+                href="https://www.gov.br/pt-br/orgaos-do-governo"
+                target="_blank"
+                >Órgãos do Governo</a
+              >
+            </li>
+            <li>
+              <a
+                href="https://www.gov.br/acessoainformacao/pt-br"
+                target="_blank"
+                >Acesso à informação</a
+              >
+            </li>
+            <li>
+              <a href="http://www4.planalto.gov.br/legislacao/" target="_blank"
+                >Legislação</a
+              >
+            </li>
+            <li>
+              <a
+                href="https://www.gov.br/governodigital/pt-br/acessibilidade-digital"
+                target="_blank"
+                >Acessibilidade</a
+              >
+            </li>
+          </ul>
+        </nav>
+      </div>
+
+      <div class="header__barra-qmd">
         <img
-          src="img/logo_conjugada_reduzida.gif"
-          alt="Logotipo do Programa Queimadas do INPE"
-          class="header__logo-inpe-qmd"
+          src="img/logo_inpe-qmd-smbs.png"
+          alt="Logotipos Inpe + Programa Queimadas"
         />
-        <img
-          src="img/mcti-hrztl.png"
-          alt="Logotipos do Ministério da Ciência, Tecnologia e Inovação e Governo Federal"
-          class="header__logo-mcti-gov"
-        />
+        <h1>
+          Programa Queimadas do
+          <abbr title="Instituto Nacional de Pesquisas Espaciais">INPE</abbr>
+        </h1>
       </div>
     </header>
 
@@ -87,11 +136,11 @@
       <div class="tile-start-section">
         <h1>Sistemas</h1>
       </div>
-      <nav aria-label="Sistemas">
+      <nav aria-label="Sistemas" class="box-button-container">
         <a
           href="http://terrabrasilis.dpi.inpe.br/queimadas/bdqueimadas/"
           target="_blank"
-          class="box-btn"
+          class="box-button"
           ><div>
             <img src="img/logo-dbq.png" alt="Ícone BDQ" />
           </div>
@@ -109,7 +158,7 @@
         <a
           href="http://terrabrasilis.dpi.inpe.br/app/dashboard/fires/biomes/aggregated/"
           target="_blank"
-          class="box-btn"
+          class="box-button"
           ><div>
             <img src="img/icon-car.png" alt="Logotipo Desmatamento - CAR" />
           </div>
@@ -128,7 +177,7 @@
         <a
           href="http://terrabrasilis.dpi.inpe.br/ams/"
           target="_blank"
-          class="box-btn"
+          class="box-button"
           ><div>
             <img
               src="img/icon-deter.png"
@@ -151,7 +200,7 @@
         <a
           href="http://terrabrasilis.dpi.inpe.br/queimadas/situacao-atual/situacao_atual/"
           target="_blank"
-          class="box-btn"
+          class="box-button"
         >
           <div>
             <img src="img/logo-sit-atual.png" alt="Ícone Situação Atual" />
@@ -165,7 +214,7 @@
         <a
           href="http://terrabrasilis.dpi.inpe.br/queimadas/situacao-atual/estatisticas/estatisticas_paises/"
           target="_blank"
-          class="box-btn"
+          class="box-button"
         >
           <div>
             <img
@@ -184,7 +233,7 @@
         <a
           href="http://terrabrasilis.dpi.inpe.br/queimadas/situacao-atual/estatisticas/estatisticas_estados/"
           target="_blank"
-          class="box-btn"
+          class="box-button"
         >
           <div>
             <img
@@ -203,51 +252,24 @@
       <div class="tile-start-section">
         <h1>Dados para download</h1>
       </div>
-      <nav aria-label="Dados para download">
-        <!-- Box Arquivos CSV -->
-        <a
-          href="https://dataserver-coids.inpe.br/queimadas/queimadas/focos/csv/"
-          target="_blank"
-          class="box-btn"
-        >
-          <div class="box-btn__symbol">
-            <i class="box-btn__symbol__icon fas fa-file-csv"></i>
+      <nav aria-label="Dados para download" class="box-button-container">
+        <!-- Box Focos de Queimadas e Incêndios -->
+        <a href="dados-abertos/#da-focos" class="box-button">
+          <div>
+            <img
+              src="img/logo-focos.png"
+              alt="Focos de Queimadas e Incêndios"
+            />
           </div>
-          <h2>
-            Arquivos
-            <abbr title="Comma-Separated Values">CSV</abbr>
-          </h2>
+          <h2>Focos de Queimadas</h2>
           <p>
-            Obtenha as informações mais recentes sobre focos de queimadas em
-            tempo quase real. Arquivos atualizados a cada 10 minutos.
-          </p>
-        </a>
-
-        <!-- Box Arquivos KML -->
-        <a
-          href="https://dataserver-coids.inpe.br/queimadas/queimadas/focos/kml/"
-          target="_blank"
-          class="box-btn"
-          ><div class="box-btn__symbol">
-            <i class="box-btn__symbol__icon fa-regular fa-file"></i>
-            <i class="box-btn__symbol__icon-add fa-brands fa-google"></i>
-          </div>
-
-          <h2>
-            Arquivos
-            <abbr title="Keyhole Markup Language">KML</abbr>
-          </h2>
-          <p>
-            Permite o uso dos dados do INPE diretamente no sistema Google Earth.
+            Informações sobre focos de queimadas em vários intervalos, desde
+            anuais até em tempo quase real (a cada 10 minutos).
           </p>
         </a>
 
         <!-- Box AQ1km -->
-        <a
-          href="https://dataserver-coids.inpe.br/queimadas/queimadas/area_queimada/AQ1km/"
-          target="_blank"
-          class="box-btn"
-        >
+        <a href="dados-abertos/#da-area-qmd" class="box-button">
           <div>
             <img src="img/logo-aq.png" alt="Ícone Área Queimada - AQ1km" />
           </div>
@@ -262,11 +284,7 @@
         </a>
 
         <!-- Box Risco de Fogo e Meteorologia -->
-        <a
-          href="https://dataserver-coids.inpe.br/queimadas/queimadas/riscofogo_meteorologia/"
-          target="_blank"
-          class="box-btn"
-        >
+        <a href="dados-abertos/#da-rf" class="box-button">
           <div>
             <img src="img/logo-rf.png" alt="Logotipo Desmatamento - CAR" />
           </div>
@@ -278,7 +296,7 @@
         <a
           href="https://dataserver-coids.inpe.br/queimadas/queimadas/sisam/"
           target="_blank"
-          class="box-btn"
+          class="box-button"
         >
           <div>
             <img src="img/logo-sisam.png" alt="SISAM" />
@@ -300,7 +318,7 @@
         <a
           href="http://terrabrasilis.dpi.inpe.br/queimadas/geoserver/wms?SERVICE=WMS&VERSION=1.3.0&REQUEST=Getcapabilities"
           target="_blank"
-          class="box-btn"
+          class="box-button"
         >
           <div>
             <img src="img/icon-ogc.png" alt="SISAM" />
@@ -320,15 +338,15 @@
       <div class="tile-start-section">
         <h1>Informações</h1>
       </div>
-      <nav aria-label="Informações">
+      <nav aria-label="Informações" class="box-button-container">
         <!-- Box Publicações e Impacto -->
         <a
           href="https://dataserver-coids.inpe.br/queimadas/queimadas/Publicacoes-Impacto/"
           target="_blank"
-          class="box-btn"
+          class="box-button"
         >
-          <div class="box-btn__symbol">
-            <i class="box-btn__symbol__icon fa-regular fa-newspaper"></i>
+          <div class="box-button__symbol">
+            <i class="box-button__icon fa-regular fa-newspaper"></i>
           </div>
           <h2>Publicações e Impacto</h2>
           <p>
@@ -341,7 +359,7 @@
         <a
           href="https://dataserver-coids.inpe.br/queimadas/queimadas/Exemplos-Validacao/?C=N;O=D"
           target="_blank"
-          class="box-btn"
+          class="box-button"
         >
           <div>
             <img src="img/logo-vldc.png" alt="Logotipo Exemplos e Validações" />
@@ -356,10 +374,10 @@
         <!-- Box FAQ -->
         <a
           href="http://terrabrasilis.dpi.inpe.br/queimadas/portal/faq/index.html"
-          class="box-btn"
+          class="box-button"
         >
-          <div class="box-btn__symbol">
-            <i class="fa-solid fa-clipboard-question box-btn__symbol__icon"></i>
+          <div class="box-button__symbol">
+            <i class="fa-solid fa-clipboard-question box-button__icon"></i>
           </div>
           <h2>
             Perguntas Frequentes •

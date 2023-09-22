@@ -1,0 +1,424 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+    <meta charset="ISO-8859-1" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Dados Abertos &bull; Programa Queimadas &bull; INPE</title>
+    <link rel="shortcut icon" href="img/dados-abertos-qmd-ico.png" />
+
+    <link rel="stylesheet" href="../css/main.css" />
+    <link rel="stylesheet" href="../css/header-gov.css" />
+    <link rel="stylesheet" href="../css/box-open-files.css" />
+    <link
+      href="https://use.fontawesome.com/releases/v6.4.2/css/all.css"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <!-- Header Gov -->
+    <header class="header">
+      <div class="header__barra-gov">
+        <div>
+          <div class="header__barra-gov__logo">
+            <a href="https://www.gov.br/pt-br" target="_blank"
+              ><img
+                src="../img/govbr-logo-large.png"
+                alt="Logotipo Portal do Governo Federal"
+              />
+            </a>
+          </div>
+          <div class="header__barra-gov__ministry">
+            <a href="https://www.gov.br/mcti/" target="_blank"
+              >Ministério da Ciência, Tecnologia e Inovação</a
+            >
+          </div>
+        </div>
+        <nav class="header__barra-gov__links" aria-label="Links Rápidos">
+          <ul>
+            <li>
+              <a
+                href="https://www.gov.br/pt-br/orgaos-do-governo"
+                target="_blank"
+                >Órgãos do Governo</a
+              >
+            </li>
+            <li>
+              <a
+                href="https://www.gov.br/acessoainformacao/pt-br"
+                target="_blank"
+                >Acesso à informação</a
+              >
+            </li>
+            <li>
+              <a href="http://www4.planalto.gov.br/legislacao/" target="_blank"
+                >Legislação</a
+              >
+            </li>
+            <li>
+              <a
+                href="https://www.gov.br/governodigital/pt-br/acessibilidade-digital"
+                target="_blank"
+                >Acessibilidade</a
+              >
+            </li>
+          </ul>
+        </nav>
+      </div>
+
+      <div class="header__barra-qmd">
+        <a href="http://terrabrasilis.dpi.inpe.br/queimadas/portal/">
+          <img
+            src="../img/logo_inpe-qmd-smbs.png"
+            alt="Logotipos Inpe + Programa Queimadas"
+        /></a>
+        <h1>
+          Programa Queimadas do
+          <abbr title="Instituto Nacional de Pesquisas Espaciais">INPE</abbr>
+        </h1>
+      </div>
+    </header>
+
+    <!-- Breadcrumbs Qmd -->
+    <main class="main-content--large">
+      <div class="breadcrumbs-wrapper">
+        <nav
+          aria-label="Histórico de navegação (Breadcrumbs)"
+          class="breadcrumbs"
+        >
+          <ul>
+            <li>
+              <a href="http://terrabrasilis.dpi.inpe.br/queimadas/portal/">
+                <i
+                  class="fa-solid fa-house-fire"
+                  title="Home do portal do Programa Queimadas do INPE"
+                ></i
+              ></a>
+            </li>
+            <li><span id="breadcrumbs-current">Dados Abertos</span></li>
+          </ul>
+        </nav>
+      </div>
+
+      <!-- Section Focos de Queimadas e Incêndios -->
+      <section id="da-focos">
+        <div>
+          <h1 class="section-title">Focos de Queimadas e Incêndios</h1>
+          <p class="pb-medium">
+            Arquivos disponibilizados contendo informações sobre focos de
+            queimadas e incêndios florestais em vários intervalos, desde anuais
+            até em <q>tempo quase real</q> (a cada 10 minutos). Esses dados
+            estão disponíveis nos formatos CSV (Comma-Separated Values) e KML
+            (Keyhole Markup Language).
+          </p>
+
+          <div class="box-files__area">
+            <div class="box-files__container">
+              <div class="tile-end-section">
+                <h2>
+                  Arquivos <abbr title="Comma Separated Values">CSV</abbr>
+                </h2>
+              </div>
+              <div class="box-files">
+                <div class="box-files__content">
+                  <div>
+                    <a
+                      aria-label="10 min"
+                      href="https://dataserver-coids.inpe.br/queimadas/queimadas/focos/csv/10min/"
+                      target="_blank"
+                    >
+                      <i class="fas fa-regular fa-hourglass-half"></i>
+                    </a>
+                    <p>Últimos 10 min</p>
+                  </div>
+                  <div>
+                    <a
+                      aria-label="Diários"
+                      href="https://dataserver-coids.inpe.br/queimadas/queimadas/focos/csv/diario/"
+                      target="_blank"
+                    >
+                      <i class="fas fa-solid fa-calendar-day"></i>
+                    </a>
+                    <p>Diários</p>
+                  </div>
+                  <div>
+                    <a
+                      aria-label="Mensais"
+                      href="https://dataserver-coids.inpe.br/queimadas/queimadas/focos/csv/mensal/"
+                      target="_blank"
+                    >
+                      <i class="fas fa-solid fa-calendar-days"></i>
+                    </a>
+                    <p>Mensais</p>
+                  </div>
+                  <div>
+                    <a
+                      aria-label="Anuais"
+                      href="https://dataserver-coids.inpe.br/queimadas/queimadas/focos/csv/anual/"
+                      target="_blank"
+                    >
+                      <i class="fas fa-regular fa-calendar"></i>
+                    </a>
+                    <p>Anuais</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="box-files__container">
+              <div class="tile-end-section">
+                <h2>
+                  Arquivos <abbr title="Keyhole Markup Language">KML</abbr>
+                </h2>
+              </div>
+              <div class="box-files">
+                <div class="box-files__content">
+                  <div>
+                    <a
+                      aria-label="Focos GOES-16 BR • 3 dias"
+                      href="https://dataserver-coids.inpe.br/queimadas/queimadas/focos/kml/focos_BR_GOES16_3dias.kml"
+                    >
+                      <i class="fa-solid fa-satellite-dish"></i>
+                    </a>
+                    <p>Últimos 3 dias</p>
+                    <p>GOES-16 BR</p>
+                  </div>
+                  <div>
+                    <a
+                      aria-label="Focos diários web"
+                      href="https://dataserver-coids.inpe.br/queimadas/queimadas/focos/kml/focos_diario_web.kml"
+                    >
+                      <i class="fas fa-solid fa-calendar-day"></i>
+                    </a>
+                    <p>Diários • Web</p>
+                  </div>
+                  <div>
+                    <a
+                      aria-label="Focos diários web • Satélite de referência"
+                      href="https://dataserver-coids.inpe.br/queimadas/queimadas/focos/kml/focos_diario_web_sat-referencia.kml"
+                    >
+                      <i class="fa-solid fa-satellite"></i>
+                    </a>
+                    <p>Diários • Web</p>
+                    <p>Satélite de referência</p>
+                  </div>
+                  <div>
+                    <a
+                      aria-label="Instruções para acessar os arquivos"
+                      href="https://dataserver-coids.inpe.br/queimadas/queimadas/focos/kml/instrucao_acessar_arquivo.txt"
+                      target="_blank"
+                      id="showInstructions"
+                    >
+                      <i class="fa-solid fa-file-lines"></i>
+                    </a>
+                    <p>Instruções</p>
+                    <p>Como acessar via Google Earth</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Section Área Queimada -->
+      <section id="da-area-qmd">
+        <div>
+          <h1 class="section-title">Área Queimada</h1>
+          <p class="pb-medium">
+            Arquivos contendo informações sobre áreas queimadas. Esses dados
+            estão disponíveis nos formatos TIFF (Tagged Image File Format), um
+            formato de arquivo de imagem de alta qualidade, e Shapefile, que é
+            usado para armazenar informações geoespaciais, como mapas e dados
+            geográficos.
+          </p>
+          <div class="box-files__area">
+            <div class="box-files__container">
+              <div class="tile-end-section">
+                <h2><abbr title="Área Queimada, 1 Quilômetro">AQ 1km</abbr></h2>
+              </div>
+              <div class="box-files">
+                <div class="box-files__content">
+                  <div>
+                    <a
+                      aria-label="Mensais"
+                      href="https://dataserver-coids.inpe.br/queimadas/queimadas/area_queimada/AQ1km/shp/"
+                      target="_blank"
+                    >
+                      <i class="fa-solid fa-images"></i>
+                    </a>
+                    <p>Mensais</p>
+                    <p><abbr title="Tag Image File Format">Tiff</abbr></p>
+                  </div>
+                  <div>
+                    <a
+                      aria-label="Mensais"
+                      href="https://dataserver-coids.inpe.br/queimadas/queimadas/area_queimada/AQ1km/tif/"
+                      target="_blank"
+                    >
+                      <i class="fa-regular fa-images"></i>
+                    </a>
+                    <p>Mensais</p>
+                    <p>Shapefile</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Section Focos de Risco de Fogo -->
+      <section id="da-rf">
+        <div>
+          <h1 class="section-title">Risco de Fogo e Meteorologia</h1>
+          <p class="pb-medium">
+            Os dados de Risco de Fogo e Meteorologia são categorizados como
+            <q>observados</q> diariamente e <q>previstos</q> para os próximos 3
+            dias.
+          </p>
+
+          <div class="box-files__area">
+            <div class="box-files__container">
+              <div class="tile-end-section">
+                <h2>Risco de Fogo Observado</h2>
+              </div>
+              <div class="box-files">
+                <div class="box-files__content">
+                  <div>
+                    <a
+                      aria-label="Diário"
+                      href="https://dataserver-coids.inpe.br/queimadas/queimadas/riscofogo_meteorologia/observado/risco_fogo/"
+                      target="_blank"
+                    >
+                      <i class="fa-solid fa-fire"></i>
+                    </a>
+                    <p>Diário</p>
+                    <p>Risco de Fogo</p>
+                  </div>
+                  <div>
+                    <a
+                      aria-label="Diário"
+                      href="https://dataserver-coids.inpe.br/queimadas/queimadas/riscofogo_meteorologia/observado/precipitacao/"
+                      target="_blank"
+                    >
+                      <i class="fa-solid fa-cloud-showers-heavy"></i>
+                    </a>
+                    <p>Diário</p>
+                    <p>Precipitação</p>
+                  </div>
+                  <div>
+                    <a
+                      aria-label="Diário"
+                      href="https://dataserver-coids.inpe.br/queimadas/queimadas/riscofogo_meteorologia/observado/temperatura/"
+                      target="_blank"
+                    >
+                      <i class="fa-solid fa-temperature-low"></i>
+                    </a>
+                    <p>Diário</p>
+                    <p>Temperatura</p>
+                  </div>
+                  <div>
+                    <a
+                      aria-label="Diário"
+                      href="https://dataserver-coids.inpe.br/queimadas/queimadas/riscofogo_meteorologia/observado/umidade_relativa/"
+                      target="_blank"
+                    >
+                      <i class="fa-solid fa-droplet"></i>
+                    </a>
+                    <p>Diário</p>
+                    <p>Umidade relativa</p>
+                  </div>
+                  <div>
+                    <a
+                      aria-label="Diário"
+                      href="https://dataserver-coids.inpe.br/queimadas/queimadas/riscofogo_meteorologia/observado/numero_dias_sem_chuva/"
+                      target="_blank"
+                    >
+                      <i class="fa-solid fa-sun-plant-wilt"></i>
+                    </a>
+                    <p>Diário</p>
+                    <p>Número de dias sem chuva</p>
+                  </div>
+                  <div>
+                    <a
+                      aria-label="Média diária, Fumaça"
+                      href="https://dataserver-coids.inpe.br/queimadas/queimadas/riscofogo_meteorologia/observado/fumaca_aod469/"
+                      target="_blank"
+                    >
+                      <i class="fa-solid fa-cloud"></i>
+                    </a>
+                    <p>Média diária</p>
+                    <p>Fumaça</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="box-files__container">
+              <div class="tile-end-section">
+                <h2>Risco de Fogo Previsto</h2>
+              </div>
+              <div class="box-files">
+                <div class="box-files__content">
+                  <div>
+                    <a
+                      aria-label="Mensais"
+                      href="https://dataserver-coids.inpe.br/queimadas/queimadas/riscofogo_meteorologia/previsto/risco_fogo/"
+                      target="_blank"
+                    >
+                      <i class="fa-solid fa-fire"></i>
+                    </a>
+                    <p>Próximos 3 dias</p>
+                    <p>Risco de Fogo</p>
+                  </div>
+                  <div>
+                    <a
+                      aria-label="Mensais"
+                      href="https://dataserver-coids.inpe.br/queimadas/queimadas/riscofogo_meteorologia/previsto/precipitacao/"
+                      target="_blank"
+                    >
+                      <i class="fa-solid fa-cloud-showers-heavy"></i>
+                    </a>
+                    <p>Próximos 3 dias</p>
+                    <p>Precipitação</p>
+                  </div>
+                  <div>
+                    <a
+                      aria-label="Mensais"
+                      href="https://dataserver-coids.inpe.br/queimadas/queimadas/riscofogo_meteorologia/previsto/temperatura/"
+                      target="_blank"
+                    >
+                      <i class="fa-solid fa-temperature-low"></i>
+                    </a>
+                    <p>Próximos 3 dias</p>
+                    <p>Temperatura</p>
+                  </div>
+                  <div>
+                    <a
+                      aria-label="Mensais"
+                      href="https://dataserver-coids.inpe.br/queimadas/queimadas/riscofogo_meteorologia/previsto/umidade_relativa/"
+                      target="_blank"
+                    >
+                      <i class="fa-solid fa-droplet"></i>
+                    </a>
+                    <p>Próximos 3 dias</p>
+                    <p>Umidade relativa</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="footer">
+      <div>
+        2023 &bull; Programa Queimadas do
+        <abbr title="Instituto Nacional de Pesquisas Espaciais">INPE</abbr>
+        &bull; Av. dos Astronautas, 1.758 &bull; São José dos Campos &bull; SP
+      </div>
+    </footer>
+    <script src="../js/box-struction.js"></script>
+  </body>
+</html>

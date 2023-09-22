@@ -1,0 +1,156 @@
+.main-banner {
+  height: auto;
+  overflow: hidden;
+  background-color: var(--color-dark-primary);
+  margin-bottom: 2rem;
+}
+
+/* Static Main Banner  */
+.main-banner-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 1rem;
+  background-color: var(--color-dark-primary);
+  background-image: linear-gradient(
+    45deg,
+    var(--color-dark-gray) 0%,
+    var(--color-dark-primary) 100%
+  );
+}
+.main-banner-content h2 {
+  font-size: 1.8rem;
+  font-weight: 700;
+  color: var(--color-dark-secondary);
+  text-align: center;
+}
+.main-banner-content p {
+  font-size: 0.9rem;
+  text-align: center;
+  color: var(--color-dark-secondary);
+}
+
+/* Animated Main Banner */
+.main-banner-animated {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  padding: 16px;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+.main-banner-animated::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: url("../img/banner_portal_1176.png");
+  background-position: left;
+  animation: scaleBackground 15s infinite alternate;
+}
+.main-banner-animated p,
+.main-banner-animated h2 {
+  position: relative;
+  line-height: 1.2;
+  background-color: rgba(165, 42, 42, 0.7);
+  color: var(--color-light-primary);
+  text-align: center;
+  padding: 0.5rem;
+  margin: 0.2rem 0;
+}
+.main-banner-animated p {
+  font-size: 1.2rem;
+}
+.main-banner-animated h2 {
+  font-weight: 600;
+  font-size: 1.4rem;
+  text-transform: none;
+}
+@keyframes scaleBackground {
+  0% {
+    transform: scale(1.2);
+    background-position: left;
+  }
+  100% {
+    transform: scale(1);
+    background-position: left center;
+  }
+}
+
+/* Styles for Medium Screens =========================================================================== */
+@media (min-width: 768px) {
+  .main-banner {
+    border-radius: 15px;
+  }
+
+  /* Static Main Banner */
+  .main-banner-content {
+    padding: 2rem;
+  }
+  .main-banner-content h2 {
+    font-size: 1.8rem;
+    font-weight: 700;
+  }
+  .main-banner-content p {
+    font-size: 1rem;
+  }
+
+  /* Animated Main Banner */
+  .main-banner-animated {
+    padding: 0 3rem 0 12rem;
+    align-items: end;
+  }
+  .main-banner-animated p,
+  .main-banner-animated h2 {
+    font-size: 1.5rem;
+    background-color: rgba(0, 0, 0, 0);
+    color: var(--cor-do-texto);
+    text-align: right;
+    padding: 0;
+  }
+  .main-banner-animated h2 {
+    font-size: 1.9rem;
+    text-transform: none;
+    font-weight: 700;
+  }
+}
+
+/* Media Queries for Large Screens =========================================================================== */
+@media (min-width: 1024px) {
+  /* Static Main Banner */
+  .main-banner-content {
+    flex-direction: row;
+    column-gap: 1rem;
+    align-items: start;
+  }
+  .main-banner-content h2 {
+    font-size: 1.8rem;
+    font-weight: 700;
+    text-align: left;
+  }
+  .main-banner-content p {
+    font-size: 1rem;
+    text-align: left;
+  }
+
+  /* Animated Main Banner */
+  .main-banner-animated {
+    padding: 1rem 2rem 1rem 14rem;
+    align-items: start;
+  }
+  .main-banner-animated p,
+  .main-banner-animated h2 {
+    text-align: left;
+  }
+  .main-banner-animated h2 {
+    font-size: 2.1rem;
+  }
+  .main-banner-animated::before {
+    animation: scaleBackground 20s infinite alternate;
+  }
+}

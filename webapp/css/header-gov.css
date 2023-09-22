@@ -1,0 +1,93 @@
+.header__barra-gov,
+.header__barra-qmd {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  max-width: var(--largura-max);
+  margin: 0 auto;
+  width: var(--largura-tela-peq);
+  position: relative;
+  height: auto;
+}
+.header__barra-gov {
+  justify-content: space-between;
+}
+.header__barra-gov > div {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+.header__barra-gov__logo {
+  height: 40px;
+  min-width: 111px;
+  width: 111px;
+}
+.header__barra-gov__ministry {
+  overflow: hidden;
+  font-size: 12px;
+  line-height: 1;
+}
+
+@media (min-width: 768px) {
+  .header__barra-gov__ministry {
+    font-size: 14px;
+  }
+}
+.header__barra-qmd img {
+  max-height: 36px;
+}
+.header__barra-gov__ministry a {
+  color: #555;
+  text-decoration: none;
+}
+
+.header__barra-gov__links {
+  display: none;
+  align-items: center;
+}
+
+@media (min-width: 1024px) {
+  .header__barra-gov__links {
+    display: flex;
+  }
+}
+.header__barra-gov__links ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  gap: 1rem;
+}
+.header__barra-gov__links ul li a {
+  color: #1351b4;
+  text-decoration: none;
+  font-size: 14px;
+  font-weight: 500;
+}
+.header__barra-gov__links ul li a:hover {
+  color: #0c326f;
+}
+.header__barra-qmd {
+  display: flex;
+  align-items: center;
+  padding-top: 1rem;
+  margin-top: 0;
+}
+.header__barra-qmd h1 {
+  font-size: 16px;
+  font-weight: 400;
+  color: #333;
+  margin: 0;
+  padding: 0;
+}
+
+@media (min-width: 1024px) {
+  .header__barra-qmd {
+    display: flex;
+    align-items: center;
+  }
+  .header__barra-qmd h1 {
+    font-size: 20px;
+    margin: 1rem 0;
+  }
+}

@@ -1,0 +1,413 @@
+/* Define títulos gerais do painel*/
+h1,
+h3 {
+  font-family: "Bebas Neue", sans-serif;
+}
+h1 {
+  font-size: 1.5rem;
+  color: #b1442c;
+}
+h2 {
+  text-transform: uppercase;
+  font-family: "Montserrat", sans-serif;
+  font-size: 0.6rem;
+  padding-top: 0.3rem;
+}
+h3 {
+  font-size: 1.1rem;
+  color: #fff;
+  text-align: center;
+  padding: 0.6rem;
+}
+
+/* Define o background e o layout do "container" */
+body,
+html {
+  height: 100%;
+  margin: 0;
+}
+
+body {
+  background-image: url("../img/bg-mundo-light.jpg");
+  background-size: cover;
+}
+.container {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+
+/* Define a largura máxima e a margem do conteúdo principal, do header e do footer */
+main,
+header,
+.footer-content {
+  width: 90%;
+  margin: 0 auto;
+}
+
+/* Define o layout e estilo do header */
+header {
+  display: grid;
+  grid-template-columns: 1fr;
+}
+header > :nth-child(1) {
+  box-sizing: border-box;
+  background-color: #fff;
+  padding: 1.5rem;
+  text-align: center;
+  border-radius: 0 0 2rem 2rem;
+  box-shadow: 0 0.8rem 0.8rem rgba(50, 50, 71, 0.1),
+    0 0.8rem 0.8rem rgba(50, 50, 71, 0.25);
+}
+header > :nth-child(2) {
+  display: flex;
+  justify-content: center;
+}
+header > :nth-child(2) img {
+  padding: 0.5rem 0;
+  max-width: 90%;
+  max-height: 50px;
+}
+
+/* Define o layout e estilo do footer */
+footer {
+  background-color: rgba(255, 255, 255, 0.85);
+  margin-top: 1.5rem;
+}
+.footer-content {
+  padding: 1.2rem 0 0.5rem;
+}
+.footer-content p {
+  font-family: "Roboto", sans-serif;
+  font-size: 0.5rem;
+  line-height: 0.6rem;
+  text-align: justify;
+}
+.footer-content h4 {
+  font-family: "Roboto", sans-serif;
+  font-size: 0.5rem;
+  line-height: 0.6rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  padding: 0.7rem 0 0.2rem;
+}
+.expediente {
+  display: flex;
+  flex-direction: column;
+}
+.expediente div {
+  flex-basis: 100%;
+}
+.expediente > div:nth-child(2),
+.expediente > div:nth-child(3),
+.expediente > div:nth-child(4) {
+  padding-bottom: 0.8rem;
+}
+.expediente > div:nth-child(4) {
+  margin: 0 auto;
+}
+
+/* Define o layout e estilo dos Boxes */
+main > div {
+  box-shadow: 0 0.8rem 0.8rem rgba(50, 50, 71, 0.1),
+    0 0.8rem 0.8rem rgba(50, 50, 71, 0.25);
+  margin-top: 1rem;
+  background: linear-gradient(135deg, #d7d7d7, #fff);
+  border: 0.125rem solid #fff;
+  border-radius: 1rem;
+  box-sizing: border-box;
+}
+/* Define a disposição dos boxes */
+.wrapper {
+  flex-grow: 1;
+  display: grid;
+  grid-template-areas:
+    "mapa01"
+    "mapa02"
+    "mapa03"
+    "graph01"
+    "graph02"
+    "graph03";
+  gap: 1.25rem;
+  padding: 1rem 0;
+  box-sizing: border-box;
+}
+.wrapper img {
+  width: 100%;
+  height: auto;
+}
+
+/* Define estilos dos topos dos boxes */
+.header-box {
+  display: block;
+  position: relative;
+  margin: -0.75rem auto 0;
+  background: linear-gradient(to right, #c67c6b, #b1442c);
+  box-shadow: 0.125rem 0.125rem 0 rgba(0, 0, 0, 0.15);
+  width: 80%;
+  border-radius: 0 0 0.8rem 0.8rem;
+}
+.header-box::before {
+  content: "";
+  display: block;
+  position: absolute;
+  left: -10px;
+  width: 0;
+  height: 0;
+  border-bottom: 10px solid #8a4848;
+  border-left: 10px solid transparent;
+}
+.header-box::after {
+  content: "";
+  display: block;
+  position: absolute;
+  right: -10px;
+  top: 0px;
+  width: 0;
+  height: 0;
+  border-bottom: 10px solid #8a4848;
+  border-right: 10px solid transparent;
+}
+.header-box + div {
+  padding: 0.6rem 1.2rem 1.2rem;
+  box-sizing: border-box;
+}
+
+/* Define estilos do conteúdo dos boxes */
+.box-content {
+  height: 95%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+.box-content img {
+  max-height: 100%;
+  margin-top: 0.75rem;
+}
+.box-content p {
+  font-family: "Roboto", sans-serif;
+  font-size: 0.7rem;
+  padding-top: 0.5rem;
+}
+.box1 {
+  grid-area: mapa01;
+}
+.box2 {
+  grid-area: mapa02;
+}
+.box3 {
+  grid-area: mapa03;
+}
+.box4 {
+  grid-area: graph01;
+}
+.box5 {
+  grid-area: graph02;
+}
+.box6 {
+  grid-area: graph03;
+}
+.btn-group,
+.btn-group-vertical {
+  position: relative;
+  display: inline-flex;
+  vertical-align: middle;
+}
+.btn-primary {
+  color: #fff;
+  background-color: #dcb3ad;
+  border-color: #dcb3ad;
+  box-shadow: none;
+}
+.btn {
+  display: inline-block;
+  font-weight: 400;
+  color: #212529;
+  text-align: center;
+  vertical-align: middle;
+  user-select: none;
+  border: 1px solid transparent;
+  padding: 0.2rem 0.3rem;
+  margin-left: 0.3rem;
+  font-size: 1rem;
+  line-height: 1.5;
+  border-radius: 0.25rem;
+  transition: color 0.15s ease-in-out, background-color 0.15s ease-in-out,
+    border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+}
+
+/* Para resoluções de tela maiores ou iguais a 768px */
+@media screen and (min-width: 768px) {
+  h1 {
+    font-size: 2.125rem;
+  }
+  h2 {
+    font-size: 1rem;
+  }
+  h3 {
+    font-size: 1.1rem;
+  }
+  .wrapper {
+    grid-template-areas:
+      "mapa01 mapa01"
+      "mapa02 mapa03"
+      "graph01 graph02"
+      "graph03 graph03";
+    grid-template-columns: 1fr 1fr;
+    gap: 1rem;
+  }
+  .expediente {
+    flex-direction: row;
+    flex-wrap: nowrap;
+  }
+  .expediente > div:first-child {
+    flex-basis: 55%;
+  }
+  .expediente > div:nth-child(2),
+  .expediente > div:nth-child(3),
+  .expediente > div:nth-child(4) {
+    flex-basis: 15%;
+    padding-left: 2rem;
+    box-sizing: border-box;
+  }
+  .expediente > div:nth-child(2) h4:first-of-type,
+  .expediente > div:nth-child(3) h4:first-of-type,
+  .expediente > div:nth-child(4) h4:first-of-type {
+    padding: 0 0 0.2rem;
+  }
+  .expediente > div:nth-child(4) div {
+    float: right;
+  }
+  .btn-print {
+    padding: 0;
+  }
+}
+/* Para resoluções de tela maiores ou iguais a 1024px */
+@media screen and (min-width: 1024px) {
+  h1 {
+    font-size: 1.6rem;
+  }
+  h2 {
+    font-size: 1rem;
+    padding-top: 0.2rem;
+  }
+  h3 {
+    font-size: 0.9rem;
+    color: #fff;
+    text-align: center;
+    padding: 0.6rem;
+  }
+  .container {
+    display: flex;
+    height: 100vh;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+  main,
+  header,
+  .footer-content {
+    width: 90%;
+    margin: 0 auto;
+    /* max-width: 1440px; */
+  }
+  main {
+    height: 100%;
+  }
+  .wrapper {
+    display: grid;
+    grid-template-areas:
+      "mapa01 mapa02 graph01 graph02"
+      "mapa01 mapa03 graph03 graph03";
+
+    grid-template-columns: 2fr 1fr 1fr 1fr;
+    grid-template-rows: 1fr 1fr;
+    gap: 1rem;
+    /* min-height: 500px; */
+    /* max-height: 540px; */
+  }
+
+  header {
+    grid-template-columns: 2fr 1fr;
+    align-items: center;
+    padding: 0 0 1rem;
+  }
+  header > :nth-child(1) {
+    padding: 1rem 4rem;
+  }
+  header > :nth-child(2) {
+    box-sizing: border-box;
+    padding-left: 1rem;
+    justify-content: end;
+  }
+  header > :nth-child(2) img {
+    padding: 0;
+    max-width: 100%;
+    display: inline;
+    margin: 0;
+  }
+  .box1,
+  .box2,
+  .box3,
+  .box4,
+  .box5,
+  .box6 {
+    position: relative;
+    display: flex;
+    justify-content: center;
+  }
+  .box1 > div:nth-child(1),
+  .box2 > div:nth-child(1),
+  .box3 > div:nth-child(1),
+  .box4 > div:nth-child(1),
+  .box5 > div:nth-child(1),
+  .box6 > div:nth-child(1) {
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+  }
+  .box1 > div:nth-child(2),
+  .box2 > div:nth-child(2),
+  .box3 > div:nth-child(2),
+  .box4 > div:nth-child(2),
+  .box5 > div:nth-child(2),
+  .box6 > div:nth-child(2) {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    margin-top: 0.5rem;
+  }
+  .box1 p {
+    font-size: 0.65rem;
+  }
+  .expediente > div:first-child {
+    flex-basis: 65%;
+  }
+  .expediente > div:nth-child(2) {
+    flex-basis: 15%;
+    padding-left: 2rem;
+    box-sizing: border-box;
+  }
+  .expediente > div:nth-child(3),
+  .expediente > div:nth-child(4) {
+    flex-basis: 10%;
+    padding-left: 2rem;
+    box-sizing: border-box;
+  }
+}
+/* Para resoluções de tela maiores ou iguais a 1280px */
+@media screen and (min-width: 1280px) {
+  h1 {
+    font-size: 1.8rem;
+  }
+  main,
+  header,
+  .footer-content {
+    width: 80%;
+    margin: 0 auto;
+    /* max-width: 1440px; */
+  }
+  .wrapper {
+    min-height: 600px;
+  }
+}

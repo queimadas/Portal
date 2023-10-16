@@ -356,6 +356,9 @@ footer > div {
 .pt-zero {
   padding-top: 0;
 }
+.pt-short {
+  padding-top: 1rem;
+}
 .mt-zero {
   margin-top: 0;
 }

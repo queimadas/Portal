@@ -1,7 +1,7 @@
 /* Table styles */
 .page-painel-fogo__table {
   max-width: 850px;
-  margin: 2rem auto 4rem;
+  margin: 2rem auto 2rem;
   font-size: 0.7rem;
 }
 .page-painel-fogo__table tr {
@@ -51,4 +51,42 @@
 }
 .page-painel-fogo__address p {
   margin: 0;
+}
+
+.page-painel-fogo__maximize {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  margin: 0 auto;
+  height: 2rem;
+}
+
+.page-painel-fogo__maximize a {
+  position: absolute;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  top: -4rem;
+  background-color: #fff;
+  border-radius: 1rem 1rem 0 0;
+  box-shadow: 0px -10px 8px rgba(0, 0, 0, 0.5);
+  height: 4rem;
+  width: 12rem;
+  text-transform: capitalize;
+  text-decoration: none;
+  font-size: 1rem;
+  font-weight: 500;
+  color: #888;
+  padding: 0 1rem;
+  transform: scale(1);
+  transition: background-color 0.2s ease-in-out, transform 0.2s ease-in-out;
+}
+.page-painel-fogo__maximize a:hover {
+  color: var(--text-color-primary);
+  transform: scale(1.12);
+}
+.page-painel-fogo__maximize i {
+  font-size: 2rem;
+  margin: 0 0.4rem 0 0;
+  color: rgba(0, 0, 0, 0.2);
 }

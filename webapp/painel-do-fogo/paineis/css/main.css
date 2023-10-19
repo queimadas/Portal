@@ -176,7 +176,7 @@ main > div {
 
 /* Define estilos do conteúdo dos boxes */
 .box-content {
-  width:100%;
+  width: 100%;
   height: 95%;
   display: flex;
   flex-direction: column;
@@ -185,9 +185,27 @@ main > div {
   z-index: 0;
 }
 .box-content img {
-  max-width: 100%;
-  max-height: 100%;
+  max-width: 500px;
+  max-height: 90%;
   margin-top: 0.75rem;
+}
+.box-content__mapa-focos,
+.box-content__mapa-qtd-focos,
+.box-content__mapa-risco-fogo {
+  width: 100%;
+  height: 100%;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+.box-content__mapa-focos {
+  background-image: url("../img/mapa-brasil.jpg");
+}
+.box-content__mapa-qtd-focos {
+  background-image: url("../img/map-estados-focos.png");
+}
+.box-content__mapa-risco-fogo {
+  background-image: url("../img/map-risco-fogo.png");
 }
 .box-content p {
   font-family: "Roboto", sans-serif;
@@ -239,6 +257,14 @@ main > div {
   cursor: default;
 }
 
+.box1,
+.box2,
+.box3,
+.box4,
+.box5 {
+  height: 90vw;
+}
+
 .box1 {
   grid-area: mapa01;
 }
@@ -256,6 +282,7 @@ main > div {
 }
 .box6 {
   grid-area: graph03;
+  height: 50vw;
 }
 .btn-group,
 .btn-group-vertical {
@@ -305,6 +332,16 @@ main > div {
       "graph03 graph03";
     grid-template-columns: 1fr 1fr;
     gap: 1rem;
+  }
+
+  .box2,
+  .box3,
+  .box4,
+  .box5 {
+    height: 40vw;
+  }
+  .box6 {
+    height: 25vw;
   }
   .expediente {
     flex-direction: row;
@@ -395,6 +432,7 @@ main > div {
     display: inline;
     margin: 0;
   }
+
   .box1,
   .box2,
   .box3,
@@ -404,6 +442,7 @@ main > div {
     position: relative;
     display: flex;
     justify-content: center;
+    height: auto;
   }
   .box1 > div:nth-child(1),
   .box2 > div:nth-child(1),
@@ -429,6 +468,7 @@ main > div {
   }
   .box1 p {
     font-size: 0.65rem;
+    text-align: center;
   }
   .expediente > div:first-child {
     flex-basis: 65%;

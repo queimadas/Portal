@@ -1,6 +1,3 @@
-google.charts.load("current", {packages:["corechart"]});
-google.charts.setOnLoadCallback(drawChart);
-
 function drawChartBioma() {
     let total = 2759;
     let ctx = document.getElementById('grafico-rosca').getContext('2d');
@@ -233,3 +230,7 @@ function drawChart() {
     drawChartEstado();
     drawChartBioma();
 }
+
+window.onload = function() {
+    drawChart();
+};

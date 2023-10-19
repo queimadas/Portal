@@ -25,9 +25,10 @@
       src="https://kit.fontawesome.com/533cb4ab3b.js"
       crossorigin="anonymous"
     ></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/4.4.0/chart.umd.min.js" integrity="sha512-SIMGYRUjwY8+gKg7nn9EItdD8LCADSDfJNutF9TPrvEo86sQmFMh6MyralfIyhADlajSxqc7G0gs7+MwWF/ogQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
     <script
       type="text/javascript"
-      src="https://www.gstatic.com/charts/loader.js"
+      src="https://cdn.jsdelivr.net/npm/chartjs-plugin-datalabels@2"
     ></script>
     <script
       type="text/javascript"
@@ -86,21 +87,24 @@
         </div>
         <div class="box4">
           <div class="header-box"><h3>Focos por estado</h3></div>
-          <div id="grafico-barras" class="box-content">
+          <div class="box-content">
+            <canvas id="grafico-barras"></canvas>
           </div>
         </div>
         <div class="box5">
           <div class="header-box">
             <h3>Focos por bioma</h3>
           </div>
-          <div id="grafico-rosca" class="box-content">
+          <div class="box-content" id="container-rosca">
+            <canvas id="grafico-rosca"></canvas>
           </div>
         </div>
         <div class="box6">
           <div class="header-box">
             <h3>Quantidade diária da Ocorrência de focos de fogo</h3>
           </div>
-          <div id="grafico-colunas" class="box-content">
+          <div class="box-content">
+            <canvas id="grafico-colunas"></canvas>
           </div>
         </div>
       </main>

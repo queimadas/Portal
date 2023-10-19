@@ -181,6 +181,7 @@ main > div {
   display: flex;
   flex-direction: column;
   justify-content: center;
+  align-items: center;
   z-index: 0;
 }
 .box-content img {
@@ -193,6 +194,51 @@ main > div {
   font-size: 0.7rem;
   padding-top: 0.5rem;
 }
+
+.box-content canvas {
+  margin-top: .75rem;
+}
+
+.box-content:after {
+  content: attr(data-after);
+  position: absolute;
+  width: 100%;
+  bottom: .5rem;
+  left: .1rem;
+  font-family: "Montserrat", sans-serif;
+  text-align: center;
+  font-weight: 700;
+  font-size: .8rem;
+  color: #8a4848;
+  cursor: default;
+}
+
+.total-focos {
+  position:absolute;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  top:1rem;
+  width: 100%;
+  height: calc(100% - 1rem);
+  vertical-align: middle;
+  font-size: 20px;
+  font-weight: bold;
+  font-family: "Roboto", sans-serif;
+  cursor: default;
+  z-index: -1;
+}
+
+.label-total-focos {
+  font-size:8px;
+  font-weight:normal;
+  text-transform:uppercase;
+  padding:.3rem 0 0 0;
+  font-family: "Roboto", sans-serif;
+  cursor: default;
+}
+
 .box1 {
   grid-area: mapa01;
 }

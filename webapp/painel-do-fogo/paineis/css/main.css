@@ -214,31 +214,35 @@ main > div {
 }
 
 .box-content canvas {
-  margin-top: .75rem;
+  margin: 0.75rem 0;
+  width: 100%;
 }
 
 .box-content:after {
   content: attr(data-after);
   position: absolute;
   width: 100%;
-  bottom: .5rem;
-  left: .1rem;
+  bottom: 0.5rem;
+  left: 0.1rem;
   font-family: "Montserrat", sans-serif;
   text-align: center;
   font-weight: 700;
-  font-size: .8rem;
+  font-size: 0.8rem;
   color: #8a4848;
   cursor: default;
 }
 
+#container-rosca {
+  position: relative;
+}
 .total-focos {
-  position:absolute;
+  position: absolute;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  top:1rem;
-  width: 100%;
+  top: 1rem;
+  width: 50%;
   height: calc(100% - 1rem);
   vertical-align: middle;
   font-size: 20px;
@@ -249,10 +253,10 @@ main > div {
 }
 
 .label-total-focos {
-  font-size:8px;
-  font-weight:normal;
-  text-transform:uppercase;
-  padding:.3rem 0 0 0;
+  font-size: 8px;
+  font-weight: normal;
+  text-transform: uppercase;
+  padding: 0.3rem 0 0 0;
   font-family: "Roboto", sans-serif;
   cursor: default;
 }
@@ -261,7 +265,8 @@ main > div {
 .box2,
 .box3,
 .box4,
-.box5 {
+.box5,
+.box6 {
   height: 90vw;
 }
 
@@ -282,7 +287,6 @@ main > div {
 }
 .box6 {
   grid-area: graph03;
-  height: 50vw;
 }
 .btn-group,
 .btn-group-vertical {
@@ -407,10 +411,8 @@ main > div {
       "mapa01 mapa03 graph03 graph03";
 
     grid-template-columns: 2fr 1fr 1fr 1fr;
-    grid-template-rows: 1fr 1fr;
+    grid-template-rows: 50% 50%;
     gap: 1rem;
-    /* min-height: 500px; */
-    /* max-height: 540px; */
   }
 
   header {

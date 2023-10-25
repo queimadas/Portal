@@ -1,0 +1,395 @@
+/* Reset de estilos */
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+/* Variáveis globais */
+:root {
+  --global-max-width: 1280px;
+  --global-width: 83.35%;
+  --global-medium-width: 50%;
+
+  --primary-color: #cc3333;
+  --light-color: #fff;
+  --dark-color: #222;
+
+  --ideal-click-size: 3.625rem;
+
+  --space-04: 0.25rem;
+  --space-08: 0.5rem;
+  --space-16: 1rem;
+  --space-18: 1.125rem;
+  --space-24: 1.5rem;
+  --space-32: 2rem;
+  --space-48: 3rem;
+  --space-64: 4rem;
+  --space-80: 5rem;
+  --space-100: 6.25rem;
+  --space-150: 9.375rem;
+}
+
+/* Estilos gerais */
+abbr {
+  text-transform: uppercase;
+}
+
+abbr[title] {
+  text-decoration: none;
+}
+
+img {
+  width: 100%;
+  border: 0;
+  margin: 0 auto;
+}
+
+iframe {
+  width: 100%;
+}
+
+figcaption {
+  font-size: 1rem;
+  color: #777;
+  text-align: center;
+  padding: 0 1rem;
+}
+
+/* Definição de fontes personalizadas */
+@font-face {
+  font-family: BebasNeue;
+  src: url(../fonts/BebasNeue-Regular.ttf);
+}
+
+@font-face {
+  font-family: CallunaRegular;
+  src: url("./webfonts/calluna-regular-webfont.eot");
+  src: url("./webfonts/calluna-regular-webfont.eot?#iefix")
+      format("embedded-opentype"),
+    url("./webfonts/calluna-regular-webfont.woff") format("woff"),
+    url("./webfonts/calluna-regular-webfont.ttf") format("truetype"),
+    url("./webfonts/calluna-regular-webfont.svg#CallunaRegular") format("svg");
+  font-weight: normal;
+  font-style: normal;
+}
+
+/* Botões */
+.btn-basic {
+  display: block;
+  width: 17.5rem;
+  height: var(--ideal-click-size);
+  line-height: var(--ideal-click-size);
+  text-align: center;
+  margin: var(--space-24) auto 0;
+  padding: 0 var(--space-16);
+  border-radius: var(--space-32);
+  text-decoration: none;
+  font-family: BebasNeue, sans-serif;
+  font-size: 1.25rem;
+  transition: 0.15s ease-in;
+}
+
+.btn-basic__red {
+  background-color: var(--primary-color);
+  color: var(--light-color);
+}
+
+.btn-basic__red:hover {
+  background-color: rgba(204, 51, 51, 0.8);
+}
+
+.btn-basic__light {
+  background-color: rgba(255, 255, 255, 0.25);
+  color: rgba(0, 0, 0, 0.6);
+}
+
+.btn-basic__light:hover {
+  background-color: rgba(255, 255, 255, 0.5);
+}
+
+.btn-basic__sisam {
+  background-color: #89a4c7;
+  color: var(--light-color);
+}
+
+.btn-basic__sisam:hover {
+  background-color: #89a4c7d7;
+}
+
+.btn-basic__amr {
+  background-color: #fff89a;
+  color: var(--dark-color);
+}
+
+.btn-basic__amr:hover {
+  background-color: #fff89ad7;
+}
+
+/* Página base */
+.logo-qmd {
+  position: absolute;
+  top: 0;
+  right: 0;
+}
+
+.logo-qmd img {
+  width: 218px;
+  height: 130px;
+}
+
+h1 {
+  font-family: aktiv-grotesk, sans-serif;
+  font-weight: 700;
+  font-style: normal;
+  font-size: var(--space-48);
+  line-height: 110%;
+  padding: 0;
+  margin: 0;
+  text-align: center;
+}
+
+h1::after {
+  content: "";
+  display: block;
+  height: 2px;
+  width: var(--space-64);
+  background-color: var(--primary-color);
+  margin: var(--space-24) auto;
+}
+
+p {
+  font-family: CallunaRegular, serif;
+  font-style: normal;
+  font-weight: 300;
+  font-size: var(--space-18);
+  line-height: 140%;
+  color: var(--dark-color);
+  padding-bottom: var(--space-24);
+}
+
+.page-base,
+.page-base--capa {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  width: 100%;
+  background-size: cover;
+  background-position: left;
+}
+
+.page-base {
+  background-image: url("../img/paper-bg.jpg");
+}
+
+.page-base:nth-child(odd)::before {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(218, 183, 107, 0.15);
+}
+
+.page-base--capa {
+  background-image: url("../img/paper-bg-capa.jpg");
+}
+
+.page-base article {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  margin: var(--space-100) 0;
+  z-index: 1;
+}
+
+.page-base--capa article {
+  width: 100%;
+}
+
+.page-base--capa h1,
+.page-base h1 {
+  display: block;
+  padding: 0 5% var(--space-24);
+  line-height: 120%;
+  font-size: 2.5rem;
+}
+
+.page-base cite {
+  display: block;
+  margin: 0 0 2rem;
+}
+
+.page-base__txt {
+  padding: 0 5%;
+}
+
+.page-base__img {
+  width: 100%;
+}
+
+.page-base blockquote {
+  padding-bottom: 2.2rem;
+}
+
+.page-base blockquote i {
+  color: #f6b36b6e;
+  font-size: 4rem;
+}
+
+.page-base--capa h2 {
+  font-family: CallunaRegular, serif;
+  font-style: normal;
+  font-weight: 600;
+  font-size: var(--space-32);
+  line-height: 110%;
+  padding: 0;
+  margin: 0;
+  text-align: center;
+  color: rgba(0, 0, 0, 0.35);
+}
+
+@media screen and (min-width: 768px) {
+  .logo-qmd img {
+    width: 327px;
+    height: 195px;
+  }
+
+  .page-base article {
+    margin: var(--space-150) 0;
+    align-items: start;
+  }
+
+  .page-base p {
+    font-size: var(--space-24);
+  }
+
+  .page-base h1 {
+    text-align: left;
+  }
+
+  .page-base h1::after {
+    margin: var(--space-24) 0;
+  }
+
+  .page-base--capa h1 {
+    font-size: 4.5rem;
+  }
+
+  .page-base--capa h2 {
+    font-size: var(--space-48);
+  }
+}
+
+@media screen and (min-width: 1024px) {
+  .page-base cite {
+    margin: 0;
+  }
+
+  article {
+    max-width: var(--global-max-width);
+  }
+
+  .page-base article {
+    flex-direction: row;
+    align-items: center;
+    justify-content: left;
+    flex-wrap: wrap;
+    column-gap: 2%;
+    padding: 0 var(--space-48);
+    margin: var(--space-80) 0;
+  }
+
+  .page-base article h1 {
+    flex-basis: 100%;
+    padding: 0 0 var(--space-24);
+  }
+
+  .page-base--center article {
+    flex-direction: column;
+  }
+
+  .page-base--center h1::after {
+    margin: var(--space-24) auto;
+  }
+
+  .page-base--center .page-base__txt {
+    padding: 0;
+  }
+
+  .page-base--center .page-base__img {
+    max-width: 60%;
+  }
+
+  .page-base--left .page-base__txt {
+    padding: 0;
+  }
+
+  .page-base--left article div {
+    flex-basis: 49%;
+  }
+
+  .page-base--left article a {
+    margin-left: 0;
+  }
+
+  .page-base--right article div:first-of-type {
+    flex-basis: 49%;
+    padding: 0;
+    order: 2;
+  }
+
+  .page-base--right article div {
+    flex-basis: 49%;
+    order: 1;
+  }
+
+  .page-base--right article a {
+    order: 3;
+    margin-left: 0;
+  }
+  .btn-basic {
+    margin: var(--space-48) 0 0;
+  }
+}
+
+/* Rodapé */
+.l-footer {
+  background-color: var(--light-color);
+}
+
+.l-footer > div {
+  max-width: var(--global-max-width);
+  width: var(--global-width);
+  height: var(--ideal-click-size);
+  margin: 0 auto;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.l-footer > div p {
+  font-family: aktiv-grotesk, sans-serif;
+  font-weight: 600;
+  font-style: normal;
+  padding: 0;
+  font-size: 0.75rem;
+}
+
+/* Scroll */
+@media screen and (min-width: 1024px) {
+  section,
+  footer {
+    scroll-snap-align: start;
+  }
+
+  .container {
+    scroll-snap-type: y mandatory;
+    overflow-y: scroll;
+    height: 100vh;
+  }
+}

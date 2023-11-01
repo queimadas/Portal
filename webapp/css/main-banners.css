@@ -3,6 +3,14 @@
   overflow: hidden;
   background-color: var(--color-dark-primary);
   margin-bottom: 2rem;
+  transform: scale(1);
+  transition: transform 0.2s ease-in-out;
+}
+.main-banner:hover {
+  transform: scale(1.05);
+}
+.main-banner a {
+  text-decoration: none;
 }
 
 /* Static Main Banner  */
@@ -21,6 +29,7 @@
 .main-banner-content h2 {
   font-size: 1.8rem;
   font-weight: 700;
+  line-height: 1.25;
   color: var(--color-dark-secondary);
   text-align: center;
 }
@@ -28,6 +37,9 @@
   font-size: 0.9rem;
   text-align: center;
   color: var(--color-dark-secondary);
+}
+.main-banner-content p:last-of-type {
+  margin-bottom: 0;
 }
 
 /* Animated Main Banner */
@@ -126,7 +138,7 @@
   .main-banner-content {
     flex-direction: row;
     column-gap: 1rem;
-    align-items: start;
+    align-items: center;
   }
   .main-banner-content h2 {
     font-size: 1.8rem;

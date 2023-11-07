@@ -198,15 +198,7 @@ main > div {
   background-position: center;
   background-repeat: no-repeat;
 }
-.box-content__mapa-focos {
-  background-image: url("../img/mapa-brasil.jpg");
-}
-.box-content__mapa-qtd-focos {
-  background-image: url("../img/map-estados-focos.png");
-}
-.box-content__mapa-risco-fogo {
-  background-image: url("../img/map-risco-fogo.png");
-}
+
 .box-content p {
   font-family: "Roboto", sans-serif;
   font-size: 0.7rem;
@@ -288,17 +280,52 @@ main > div {
 .box6 {
   grid-area: graph03;
 }
-.btn-group,
+/*
+<div class="btn-group">
+              <a href="#" class="fc-prev-button btn btn-primary">
+                <i class="fa fa-chevron-left fa-inverse"></i>
+              </a>
+
+              <div class="btn-group-current">
+                <i
+                  class="fa-solid fa-calendar-days fa-2x"
+                  style="color: #c67c6b; margin-left: 0.3rem"
+                ></i
+                ><span>Jan</span>
+              </div>
+
+              <a href="#" class="fc-next-button btn btn-primary">
+                <i class="fa fa-chevron-right fa-inverse"></i>
+              </a>
+ */
+
+/* .btn-group,
 .btn-group-vertical {
   position: relative;
   display: inline-flex;
   vertical-align: middle;
+} */
+.btn-group {
+  display: flex;
+  gap: 0.25rem;
 }
 .btn-primary {
   color: #fff;
   background-color: #dcb3ad;
   border-color: #dcb3ad;
   box-shadow: none;
+  height: 1.6rem;
+}
+.btn-group-current {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 0.2rem;
+}
+.btn-group-current span {
+  font-family: "Bebas Neue", sans-serif;
+  color: #c67c6b;
 }
 .btn {
   display: inline-block;
@@ -309,12 +336,17 @@ main > div {
   user-select: none;
   border: 1px solid transparent;
   padding: 0.2rem 0.3rem;
-  margin-left: 0.3rem;
   font-size: 1rem;
   line-height: 1.5;
   border-radius: 0.25rem;
-  transition: color 0.15s ease-in-out, background-color 0.15s ease-in-out,
-    border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+  transition: background-color 0.15s ease-in-out;
+}
+.btn:hover {
+  background-color: #c67c6b;
+  transition: background-color 0.15s ease-in-out;
+}
+.btn-off {
+  display: none;
 }
 
 /* Para resoluções de tela maiores ou iguais a 768px */
@@ -413,6 +445,8 @@ main > div {
     grid-template-columns: 2fr 1fr 1fr 1fr;
     grid-template-rows: 50% 50%;
     gap: 1rem;
+    min-height: 500px;
+    max-height: 500px;
   }
 
   header {
@@ -497,9 +531,13 @@ main > div {
   .footer-content {
     width: 80%;
     margin: 0 auto;
-    /* max-width: 1440px; */
   }
   .wrapper {
-    min-height: 600px;
+    max-height: 520px;
+  }
+}
+@media screen and (min-width: 1720px) {
+  .wrapper {
+    max-height: 100%;
   }
 }

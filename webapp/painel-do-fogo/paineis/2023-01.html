@@ -15,6 +15,7 @@
     />
     <link rel="stylesheet" href="css/reset.css" />
     <link rel="stylesheet" href="css/main.css" />
+    <link rel="stylesheet" href="css/maps.css" />
     <link
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"
@@ -42,7 +43,7 @@
       <header>
         <div>
           <h1>Painel de Monitoramento da Ocorrência de Focos de Fogo</h1>
-          <h2>Volume 05 • Número 03 • Março 2023 • ISSN 2764-121X</h2>
+          <h2>Volume 05 • Número 01 • Janeiro 2023 • ISSN 2764-121X</h2>
         </div>
         <div>
           <img
@@ -55,11 +56,11 @@
       <main class="wrapper">
         <div class="box1">
           <div class="header-box">
-            <h3>Mapa de focos de fogo • Março/2023</h3>
+            <h3>Mapa de focos de fogo • Janeiro/2023</h3>
           </div>
 
           <div class="box-content">
-            <div class="box-content__mapa-focos"></div>
+            <div class="box-content__mapa-focos mapa-focos--01-2023"></div>
             <p>
               Mapa de distribuição espacial dos focos do satélite de referência
               (AQUA_M-T) acumulados para o Brasil.
@@ -70,7 +71,9 @@
         <div class="box2">
           <div class="header-box"><h3>Mapa de qtd. de focos</h3></div>
           <div class="box-content">
-            <div class="box-content__mapa-qtd-focos"></div>
+            <div
+              class="box-content__mapa-qtd-focos mapa-qtd-focos--01-2023"
+            ></div>
           </div>
         </div>
         <div class="box3">
@@ -78,7 +81,9 @@
             <h3>Mapa de valor médio de Risco de Fogo</h3>
           </div>
           <div class="box-content">
-            <div class="box-content__mapa-risco-fogo"></div>
+            <div
+              class="box-content__mapa-risco-fogo mapa-risco-fogo--01-2023"
+            ></div>
           </div>
         </div>
         <div class="box4">
@@ -142,27 +147,28 @@
           </div>
           <div>
             <div class="btn-group">
-              <button
-                type="button"
-                title="Mês anterior"
-                aria-pressed="false"
-                class="fc-prev-button btn btn-primary"
+              <a
+                href="#"
+                class="fc-prev-button btn btn-primary btn-off"
+                aria-label="prev-button"
               >
                 <i class="fa fa-chevron-left fa-inverse"></i>
-              </button>
-              <i
-                class="fa-solid fa-calendar-days fa-2x"
-                style="color: #c67c6b; margin-left: 0.3rem"
-              ></i>
+              </a>
+              <div class="btn-group-current">
+                <i
+                  class="fa-solid fa-calendar-days fa-2x"
+                  style="color: #c67c6b"
+                ></i
+                ><span>Jan</span>
+              </div>
 
-              <button
-                type="button"
-                title="Próximo mês"
-                aria-pressed="false"
+              <a
+                href="2023-02.html"
                 class="fc-next-button btn btn-primary"
+                aria-label="next-button"
               >
-                <span class="fa fa-chevron-right fa-inverse"></span>
-              </button>
+                <i class="fa fa-chevron-right fa-inverse"></i>
+              </a>
             </div>
           </div>
         </div>

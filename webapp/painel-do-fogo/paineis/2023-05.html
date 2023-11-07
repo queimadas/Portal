@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Painel de Monitoramento da Ocorrência de Focos de Fogo</title>
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css?family=Bebas+Neue&display=swap"
+    />
+    <link
+      href="https://fonts.googleapis.com/css?family=Montserrat:400,700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="css/reset.css" />
+    <link rel="stylesheet" href="css/main.css" />
+    <link rel="stylesheet" href="css/maps.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"
+      integrity="533cb4ab3b"
+      crossorigin="anonymous"
+    />
+    <script
+      src="https://kit.fontawesome.com/533cb4ab3b.js"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/4.4.0/chart.umd.min.js"
+      integrity="sha512-SIMGYRUjwY8+gKg7nn9EItdD8LCADSDfJNutF9TPrvEo86sQmFMh6MyralfIyhADlajSxqc7G0gs7+MwWF/ogQ=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    ></script>
+    <script
+      type="text/javascript"
+      src="https://cdn.jsdelivr.net/npm/chartjs-plugin-datalabels@2"
+    ></script>
+    <script type="text/javascript" src="js/main.js"></script>
+  </head>
+  <body>
+    <div class="container">
+      <header>
+        <div>
+          <h1>Painel de Monitoramento da Ocorrência de Focos de Fogo</h1>
+          <h2>Volume 05 • Número 05 • Maio 2023 • ISSN 2764-121X</h2>
+        </div>
+        <div>
+          <img
+            src="img/logotipos.png"
+            alt="logotipos do Inpe, do Programa Queimadas, do Ministério da Ciência, Tecnologia e Inovação, e do Governo Federal"
+          />
+        </div>
+      </header>
+
+      <main class="wrapper">
+        <div class="box1">
+          <div class="header-box">
+            <h3>Mapa de focos de fogo • Maio/2023</h3>
+          </div>
+
+          <div class="box-content">
+            <div class="box-content__mapa-focos mapa-focos--05-2023"></div>
+            <p>
+              Mapa de distribuição espacial dos focos do satélite de referência
+              (AQUA_M-T) acumulados para o Brasil.
+            </p>
+          </div>
+        </div>
+
+        <div class="box2">
+          <div class="header-box"><h3>Mapa de qtd. de focos</h3></div>
+          <div class="box-content">
+            <div
+              class="box-content__mapa-qtd-focos mapa-qtd-focos--05-2023"
+            ></div>
+          </div>
+        </div>
+        <div class="box3">
+          <div class="header-box">
+            <h3>Mapa de valor médio de Risco de Fogo</h3>
+          </div>
+          <div class="box-content">
+            <div
+              class="box-content__mapa-risco-fogo mapa-risco-fogo--05-2023"
+            ></div>
+          </div>
+        </div>
+        <div class="box4">
+          <div class="header-box"><h3>Focos por estado</h3></div>
+          <div class="box-content">
+            <canvas id="grafico-barras"></canvas>
+          </div>
+        </div>
+        <div class="box5">
+          <div class="header-box">
+            <h3>Focos por bioma</h3>
+          </div>
+          <div class="box-content" id="container-rosca">
+            <canvas id="grafico-rosca"></canvas>
+          </div>
+        </div>
+        <div class="box6">
+          <div class="header-box">
+            <h3>Quantidade diária da Ocorrência de focos de fogo</h3>
+          </div>
+          <div class="box-content">
+            <canvas id="grafico-colunas"></canvas>
+          </div>
+        </div>
+      </main>
+
+      <footer>
+        <div class="footer-content expediente">
+          <div>
+            <p>
+              Mapas digitais indicando a ocorrência de fogo na vegetação, e
+              Risco de Fogo Médio observado para todos os biomas, com resumos
+              numéricos dos produtos do Programa Queimadas do INPE, nas suas
+              diversas linhas de atuação mantido com recursos do Plano
+              Orçamentário 20V9.0002 • Monitoramento e Risco de Queimadas e
+              Incêndios Florestais; Ação 20V9 • Monitoramento da Cobertura da
+              Terra e do Risco de Queimadas e Incêndios Florestais do Governo
+              Federal, do PPA 2020-23 inserido no Programa 2050 Mudança do
+              Clima.
+            </p>
+            <h4>Endereço para correspondência</h4>
+            <p>
+              Instituto Nacional de Pesquisas Espaciais • INPE • Prédio CPTEC •
+              Sala 15 • Av. dos Astronautas, 1758 • Jardim da Granja • CEP:
+              12227-010 • São José dos Campos / SP • queimadas@inpe.br
+            </p>
+          </div>
+          <div>
+            <h4>Editor</h4>
+            <p>Fabiano Morelli</p>
+            <h4>Projeto gráfico e diagramação</h4>
+            <p>Ítalo R.B. Garrot</p>
+          </div>
+          <div>
+            <h4>Colaboradores</h4>
+            <p>Alberto W. Setzer</p>
+            <p>Fabiano Morelli</p>
+            <p>Vanúcia Schumacher</p>
+            <p>Paulo Cunha</p>
+            <p>Otávio Abreu</p>
+          </div>
+          <div>
+            <div class="btn-group">
+              <a
+                href="2023-04.html"
+                class="fc-prev-button btn btn-primary"
+                aria-label="prev-button"
+              >
+                <i class="fa fa-chevron-left fa-inverse"></i>
+              </a>
+              <div class="btn-group-current">
+                <i
+                  class="fa-solid fa-calendar-days fa-2x"
+                  style="color: #c67c6b"
+                ></i
+                ><span>Mai</span>
+              </div>
+
+              <a
+                href="2023-06.html"
+                class="fc-next-button btn btn-primary"
+                aria-label="next-button"
+              >
+                <i class="fa fa-chevron-right fa-inverse"></i>
+              </a>
+            </div>
+          </div>
+        </div>
+      </footer>
+    </div>
+  </body>
+</html>

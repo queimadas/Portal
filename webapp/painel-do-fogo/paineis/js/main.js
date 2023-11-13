@@ -160,12 +160,15 @@ class panelData {
         return [allNames, allValues, sumValues];
     }
 
-    #plotImage(imgFirespot, el, ctx) {
+    #plotImage(imgFirespot, el, ctx, paddingBottom) {
         let plotDimension = el.width;
         let plotPosition = 0;
         if(el.width > el.height) {
             plotDimension = el.height;
-            plotPosition = (el.width - el.height) / 2
+            if(typeof paddingBottom !== "undefined") {
+                plotDimension = el.height - paddingBottom;
+            }
+            plotPosition = (el.width - plotDimension) / 2
         }
         ctx.drawImage(imgFirespot, 0, 0, imgFirespot.width, imgFirespot.height, plotPosition, 0, plotDimension, plotDimension);
     }
@@ -184,7 +187,7 @@ class panelData {
         imgFirespot.src = "img/focos-brasil/" + this.#getNumberMonth() + "-" + this.#year + ".jpg";
         imgFirespot.onload = (e) => {
 
-            this.#plotImage(imgFirespot, el, ctx);
+            this.#plotImage(imgFirespot, el, ctx, 24);
 
             ctx.font="400 .6rem Montserrat";
             ctx.textBaseline="middle";
@@ -193,8 +196,8 @@ class panelData {
             ctx.fillRect(0, el.height - 30, el.width, el.height)
 
             ctx.fillStyle = "#000000";
-            ctx.fillText("Mapa de distribuição espacial dos focos do satélite de referência", 10, el.height -20);
-            ctx.fillText("(AQUA_M-T) acumulados para o Brasil.", 10, el.height -10);
+            ctx.fillText("Mapa de distribuição espacial dos focos do satélite de referência", 10, el.height -15);
+            ctx.fillText("(AQUA_M-T) acumulados para o Brasil.", 10, el.height - 5);
         };
         imgFirespot.onerror = (e) => {
             ctx.font="600 1.5rem Montserrat";
@@ -278,18 +281,42 @@ class panelData {
         const doughnutLabel = {
             id: 'doughnutLabel',
             beforeDatasetsDraw(chart, args, pluginOptions) {
-                const { ctx, data } = chart;
+                console.log(args, pluginOptions)
+                const { ctx, data } = chart,
+                    pageWidth = document.body.clientWidth,
+                    objHeight = parseInt(el.style.height.replace("px", "")),
+                    objWidth = parseInt(el.style.width.replace("px", ""));
+                let size = 20;
                 ctx.save();
 
-                ctx.font="600 1rem Montserrat";
+                if (pageWidth < 1100) {
+                    size = 14;
+                }
+                if (pageWidth < 1024) {
+                    size = 30;
+                }
+                if (pageWidth < 768) {
+                    size = 60;
+                }
+                if (pageWidth < 680) {
+                    size = 40;
+                }
+                if (pageWidth < 500) {
+                    size = 30;
+                }
+                if (pageWidth < 400) {
+                    size = 20;
+                }
+                if (pageWidth < 240) {
+                    size = 15;
+                }
+                ctx.font= `600 ${size}px Montserrat`;
                 ctx.textBaseline="middle";
                 ctx.textAlign = "center";
+                ctx.fillText(total, objWidth/2, objHeight/2);
         
-                ctx.fillText(total, el.width/2, el.height/2);
-        
-                ctx.font="100 .7rem Bebas Neue";
-                ctx.fillText("Total de Focos", el.width/2, el.height/2 + 15);
-
+                ctx.font=`100 ${size*.7}px Bebas Neue`;
+                ctx.fillText("Total de Focos", objWidth/2, objHeight/2 + size);
             }
         }
         const config = {

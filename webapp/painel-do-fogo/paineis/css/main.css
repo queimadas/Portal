@@ -304,7 +304,7 @@ main > div {
   background-color: #dcb3ad;
   border-color: #dcb3ad;
   box-shadow: none;
-  height: 1.6rem;
+  height: 100%;
 }
 .btn-group-current {
   display: flex;
@@ -313,11 +313,13 @@ main > div {
   flex-direction: row;
   align-items: center;
   justify-content: center;
-  gap: 0.2rem;
+  gap: 0;
 }
 .btn-group-current span {
   font-family: "Bebas Neue", sans-serif;
   color: #c67c6b;
+  cursor: default;
+
 }
 .btn {
   display: inline-block;
@@ -379,19 +381,25 @@ main > div {
     flex-basis: 55%;
   }
   .expediente > div:nth-child(2),
-  .expediente > div:nth-child(3),
-  .expediente > div:nth-child(4) {
-    flex-basis: 15%;
+  .expediente > div:nth-child(3) {
+    flex-basis: calc(25% - 40px);
     padding-left: 2rem;
     box-sizing: border-box;
   }
+
+  .expediente > div:last-child {
+    flex-basis: 79px;
+  }
+
   .expediente > div:nth-child(2) h4:first-of-type,
-  .expediente > div:nth-child(3) h4:first-of-type,
-  .expediente > div:nth-child(4) h4:first-of-type {
+  .expediente > div:nth-child(3) h4:first-of-type {
     padding: 0 0 0.2rem;
   }
   .expediente > div:nth-child(4) div {
-    float: right;
+    justify-content: right;
+  }
+  .expediente > div:nth-child(4) div:last-of-type {
+    justify-content: center;
   }
   .btn-print {
     padding: 0;
@@ -506,9 +514,8 @@ main > div {
     padding-left: 2rem;
     box-sizing: border-box;
   }
-  .expediente > div:nth-child(3),
-  .expediente > div:nth-child(4) {
-    flex-basis: 10%;
+  .expediente > div:nth-child(3) {
+    flex-basis: calc(20% - 80px);
     padding-left: 2rem;
     box-sizing: border-box;
   }

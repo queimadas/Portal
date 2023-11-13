@@ -189,7 +189,7 @@ class panelData {
             ctx.font="400 .6rem Montserrat";
             ctx.textBaseline="middle";
             ctx.textAlign = "left";
-            ctx.fillStyle = "#ffffff";
+            ctx.fillStyle = "transparent";
             ctx.fillRect(0, el.height - 30, el.width, el.height)
 
             ctx.fillStyle = "#000000";

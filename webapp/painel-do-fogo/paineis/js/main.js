@@ -10,9 +10,12 @@ class panelData {
     #biomeChart;
 
     constructor() {
-        const date = new Date();
-        this.#currentMonth = date.getMonth();
-        this.#currentYear = date.getFullYear();
+        const date = new Date(),
+            dtPanel = new Date(date.getFullYear(), date.getMonth() - 1, date.getDate());
+
+            this.#currentMonth = dtPanel.getMonth();
+        this.#currentYear = dtPanel.getFullYear();
+
         this.#dataUrl = "json/[year][month].json";
         if(!this.#hasQuerystring()) {
             this.#setMonth(this.#currentMonth);
@@ -45,8 +48,9 @@ class panelData {
         if(! this.#isValidYear(year)) {
             return false;
         }
-        if(year == this.year) {
-            return month >= 0 && month < this.#currentMonth;
+
+        if(year === this.#currentYear) {
+            return month >= 0 && month <= this.#currentMonth;
         }
         return this.#isValidMonth(month);
     }
@@ -113,7 +117,7 @@ class panelData {
     }
 
     changeCalendar(month, year) {
-        if(this.#isValidDate(month, year)) {
+        if(this.#isValidDate(month - 1, year)) {
             this.#setMonth(month - 1);
             this.#setYear(year);
             this.#fetch();
@@ -131,7 +135,18 @@ class panelData {
                 this.#drawMaps();
             })
             .catch(error => {
-                console.error(error);
+                let newDt = new Date(this.#currentYear, this.#currentMonth, new Date().getDate());
+
+                if(this.#year == this.#currentYear && this.#month == this.#currentMonth) {
+                    newDt.setMonth(this.#currentMonth - 1);
+                }
+
+                this.#currentMonth = newDt.getMonth();
+                this.#month = newDt.getMonth();
+                this.#currentYear = newDt.getFullYear();
+                this.#year = newDt.getFullYear();
+                this.#fetch();
+                console.error(`Não foi possível recuperar os dados de ${this.#getNumberMonth()}/${this.#year}.\n\n${error}`);
             });
     }
 
@@ -165,12 +180,14 @@ class panelData {
         let plotPosition = 0;
         if(el.width > el.height) {
             plotDimension = el.height;
-            if(typeof paddingBottom !== "undefined") {
-                plotDimension = el.height - paddingBottom;
-            }
-            plotPosition = (el.width - plotDimension) / 2
         }
+        if(typeof paddingBottom !== "undefined") {
+            plotDimension -= paddingBottom;
+        }
+        plotPosition = (el.width - plotDimension) / 2
         ctx.drawImage(imgFirespot, 0, 0, imgFirespot.width, imgFirespot.height, plotPosition, 0, plotDimension, plotDimension);
+
+        return plotPosition;
     }
     
     #drawFirespotsMap() {
@@ -178,16 +195,16 @@ class panelData {
         const el = document.getElementById('mapa-focos');
         let ctx = el.getContext('2d');
 
-        var parent = document.getElementById("box-map-firespots");
+        let parent = document.getElementById("box-map-firespots");
         el.width = parent.offsetWidth;
         el.height = parent.offsetHeight;
 
         ctx.clearRect(0, 0, el.width, el.height);
 
-        imgFirespot.src = "img/focos-brasil/" + this.#getNumberMonth() + "-" + this.#year + ".jpg";
+        imgFirespot.src = `img/focos-brasil/${this.#getNumberMonth()}-${this.#year}.jpg`;
         imgFirespot.onload = (e) => {
 
-            this.#plotImage(imgFirespot, el, ctx, 24);
+            const plotPosition = this.#plotImage(imgFirespot, el, ctx, 24);
 
             ctx.font="400 .6rem Montserrat";
             ctx.textBaseline="middle";
@@ -196,8 +213,8 @@ class panelData {
             ctx.fillRect(0, el.height - 30, el.width, el.height)
 
             ctx.fillStyle = "#000000";
-            ctx.fillText("Mapa de distribuição espacial dos focos do satélite de referência", 10, el.height -15);
-            ctx.fillText("(AQUA_M-T) acumulados para o Brasil.", 10, el.height - 5);
+            ctx.fillText("Mapa de distribuição espacial dos focos do satélite de referência", plotPosition, el.height - 15);
+            ctx.fillText("(AQUA_M-T) acumulados para o Brasil.", plotPosition, el.height - 5);
         };
         imgFirespot.onerror = (e) => {
             ctx.font="600 1.5rem Montserrat";
@@ -218,7 +235,7 @@ class panelData {
 
         ctx.clearRect(0, 0, el.width, el.height);
 
-        imgFirespot.src = "img/focos-estados/" + this.#getNumberMonth() + "-" + this.#year + ".png";
+        imgFirespot.src = `img/focos-estados/${this.#getNumberMonth()}-${this.#year}.png`;
         imgFirespot.onload = (e) => {
             this.#plotImage(imgFirespot, el, ctx);
         };
@@ -245,7 +262,7 @@ class panelData {
 
         ctx.clearRect(0, 0, el.width, el.height);
 
-        imgFirespot.src = "img/risco-fogo/" + this.#getNumberMonth() + "-" + this.#year + ".png";
+        imgFirespot.src = `img/risco-fogo/${this.#getNumberMonth()}-${this.#year}.png`;
         imgFirespot.onload = (e) => {
             this.#plotImage(imgFirespot, el, ctx);
         };
@@ -281,7 +298,6 @@ class panelData {
         const doughnutLabel = {
             id: 'doughnutLabel',
             beforeDatasetsDraw(chart, args, pluginOptions) {
-                console.log(args, pluginOptions)
                 const { ctx, data } = chart,
                     pageWidth = document.body.clientWidth,
                     objHeight = parseInt(el.style.height.replace("px", "")),
@@ -404,9 +420,7 @@ class panelData {
                 },
             }
         };
-
         this.#biomeChart = new Chart(ctx, config);
-
     }
 
     #drawStateChart() {
@@ -465,7 +479,6 @@ class panelData {
                 },
             }
         };
-
         this.#stateChart = new Chart(ctx, config);
     }
 

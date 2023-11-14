@@ -129,6 +129,10 @@ class panelData {
             .then(response => response.json())
             .then(data => {
                 this.#data = data;
+                console.log(this.#month, this.#currentMonth, this.#year, this.#currentYear, this.#month == this.#currentMonth && this.#year == this.#currentYear)
+                if(this.#month == this.#currentMonth && this.#year == this.#currentYear) {
+                    document.querySelector("#btn-next").classList.add("lastmonth");
+                }
                 this.#setQuerystring();
                 this.#setPanelHead();
                 this.#drawCharts();
@@ -217,7 +221,7 @@ class panelData {
             ctx.fillText("(AQUA_M-T) acumulados para o Brasil.", plotPosition, el.height - 5);
         };
         imgFirespot.onerror = (e) => {
-            ctx.font="600 1.5rem Montserrat";
+            ctx.font="400 1rem Montserrat";
             ctx.textBaseline="middle";
             ctx.textAlign = "center";
             ctx.fillText("Imagem indisponível", el.width/2, el.height/2);
@@ -241,7 +245,7 @@ class panelData {
         };
         imgFirespot.onerror = (e) => {
 
-            ctx.font="600 1.5rem Montserrat";
+            ctx.font="400 1rem Montserrat";
             ctx.textBaseline="bottom";
             ctx.textAlign = "center";
             ctx.fillText("Imagem", el.width/2, el.height/2);
@@ -268,7 +272,7 @@ class panelData {
         };
         imgFirespot.onerror = (e) => {
 
-            ctx.font="600 1.5rem Montserrat";
+            ctx.font="400 1rem Montserrat";
             ctx.textBaseline="bottom";
             ctx.textAlign = "center";
             ctx.fillText("Imagem", el.width/2, el.height/2);
@@ -302,29 +306,26 @@ class panelData {
                     pageWidth = document.body.clientWidth,
                     objHeight = parseInt(el.style.height.replace("px", "")),
                     objWidth = parseInt(el.style.width.replace("px", ""));
-                let size = 20;
+                let size = 16;
                 ctx.save();
 
                 if (pageWidth < 1100) {
                     size = 14;
                 }
                 if (pageWidth < 1024) {
-                    size = 30;
+                    size = 20;
                 }
                 if (pageWidth < 768) {
-                    size = 60;
-                }
-                if (pageWidth < 680) {
-                    size = 40;
+                    size = 30;
                 }
                 if (pageWidth < 500) {
-                    size = 30;
+                    size = 25;
                 }
                 if (pageWidth < 400) {
                     size = 20;
                 }
                 if (pageWidth < 240) {
-                    size = 15;
+                    size = 14;
                 }
                 ctx.font= `600 ${size}px Montserrat`;
                 ctx.textBaseline="middle";
@@ -402,21 +403,7 @@ class panelData {
                             }
                             return [label.split(" "), text];
                         }
-                    },
-                    doughnutlabel: {
-                        labels: [
-                            {
-                                text: total,
-                                font: {
-                                    size: 20,
-                                    weight: 'bold',
-                                },
-                            },
-                            {
-                                text: 'total de Focos',
-                            },
-                        ],
-                    },
+                    }
                 },
             }
         };
@@ -622,6 +609,7 @@ document.querySelector("#btn-next").addEventListener("click", () => {
 })
 
 document.querySelector("#btn-prev").addEventListener("click", () => {
+    document.querySelector("#btn-next").classList.remove("lastmonth");
     const monthsel = document.querySelector("#monthsel").innerHTML,
         yearsel = document.querySelector("#yearsel").innerHTML
     panel.changeCalendar(parseInt(monthsel) - 1, parseInt(yearsel));

@@ -289,7 +289,7 @@ main > div {
 .btn-group {
   display: flex;
   gap: 0.25rem;
-  align-items: center;
+  align-items: flex-end;
 }
 
 .btn-group > i {
@@ -297,7 +297,19 @@ main > div {
 }
 
 .btn-group > button {
+  display: flex;
   cursor: pointer;
+  line-height: .8;
+  font-size: .6rem;
+  align-items: center;
+  justify-content: flex-end;
+  padding: .3rem .3rem .2rem .3rem;
+}
+
+.btn-group > button.lastmonth,
+.btn-group > button.lastmonth:hover {
+  background-color:#d7d7d7;
+  cursor: default;
 }
 .btn-primary {
   color: #fff;

@@ -400,7 +400,7 @@ main > div {
   }
 
   .expediente > div:last-child {
-    flex-basis: 79px;
+    flex-basis: 72px;
   }
 
   .expediente > div:nth-child(2) h4:first-of-type,

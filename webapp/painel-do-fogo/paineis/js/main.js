@@ -129,7 +129,6 @@ class panelData {
             .then(response => response.json())
             .then(data => {
                 this.#data = data;
-                console.log(this.#month, this.#currentMonth, this.#year, this.#currentYear, this.#month == this.#currentMonth && this.#year == this.#currentYear)
                 if(this.#month == this.#currentMonth && this.#year == this.#currentYear) {
                     document.querySelector("#btn-next").classList.add("lastmonth");
                 }
@@ -165,8 +164,13 @@ class panelData {
             allValues.push[0];
         } else {
             const dt = this.#data.data[type];
+            if(type == "state") {
+                dt.sort(function(a, b) {
+                    return b.value - a.value;
+                });
+            }
             dt.forEach(item => {
-                if(type == "state" && allNames.length > 10) {
+                if(type == "state" && allNames.length > 8) {
                     return;
                 }
                 if(item.value !== 0) {
@@ -283,7 +287,7 @@ class panelData {
 
     #drawBiomeChart() {
         const [names, values, sumValues] = this.#prepareData('biome');
-        let total = sumValues;
+        let total = sumValues.toString();
         const el = document.getElementById('grafico-rosca');
         let ctx = el.getContext('2d');
         if(typeof this.#biomeChart !== "undefined"){
@@ -330,7 +334,7 @@ class panelData {
                 ctx.font= `600 ${size}px Montserrat`;
                 ctx.textBaseline="middle";
                 ctx.textAlign = "center";
-                ctx.fillText(total, objWidth/2, objHeight/2);
+                ctx.fillText(`${total.slice(0,-3)}.${total.slice(-3)}`, objWidth/2, objHeight/2);
         
                 ctx.font=`100 ${size*.7}px Bebas Neue`;
                 ctx.fillText("Total de Focos", objWidth/2, objHeight/2 + size);

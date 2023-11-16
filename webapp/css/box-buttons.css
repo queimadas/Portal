@@ -45,9 +45,52 @@
   font-size: 2.2rem;
 }
 
+/* Box Button Small Styles*/
+
+.box-button--small {
+  box-sizing: border-box;
+  flex-grow: 1;
+  padding: 1rem;
+  background-color: var(--color-light-gray);
+  box-shadow: 0 3px 6px 0 rgba(0, 0, 0, 0.16);
+  display: flex;
+  align-items: center;
+  flex-direction: row;
+  gap: 1rem;
+  text-align: left;
+  hyphens: auto;
+  border-radius: 15px;
+  text-decoration: none;
+  color: var(--text-color-primary);
+  transform: scale(1);
+  transition: background-color 0.2s ease-in-out, transform 0.2s ease-in-out;
+}
+.box-button--small:hover {
+  background-color: var(--color-light-primary);
+  transform: scale(1.12);
+}
+.box-button--small > div {
+  background-color: var(--color-light-primary);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 80px;
+  height: 80px;
+  flex-shrink: 0;
+  border-radius: 50%;
+}
+.box-button__icon--small {
+  color: var(--color-primary);
+  font-size: 2.5rem;
+}
+.box-button--small h2 {
+  font-size: 1.2rem;
+}
+
 /* Styles for Medium Screens =========================================================================== */
 @media (min-width: 768px) {
-  .box-button {
+  .box-button,
+  .box-button--small {
     flex-basis: 40%;
     max-width: calc(50% - 1rem);
   }
@@ -55,7 +98,8 @@
 
 /* Styles for Large Screens =========================================================================== */
 @media (min-width: 1024px) {
-  .box-button {
+  .box-button,
+  .box-button--small {
     flex-basis: 30%;
     max-width: calc(33.3% - 1.33rem);
   }

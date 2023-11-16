@@ -318,18 +318,33 @@
         <h1>Informações</h1>
       </div>
       <nav aria-label="Informações" class="box-button-container">
+        <!-- Box Painel do Fogo -->
+        <a
+          href="http://terrabrasilis.dpi.inpe.br/queimadas/portal/painel-do-fogo/index.html"
+          class="box-button"
+        >
+          <div>
+            <i class="box-button__icon fa-regular fa-solid fa-table"></i>
+          </div>
+          <h2>Painel do Fogo</h2>
+          <p>
+            Painéis com gráficos e mapas da distribuição espacial dos focos de
+            fogo acumulados para o Brasil.
+          </p>
+        </a>
+
         <!-- Box Boletim Infoqueima -->
         <a
           href="http://terrabrasilis.dpi.inpe.br/queimadas/portal/infoqueima/index.html"
           class="box-button"
         >
-          <div class="box-button__symbol">
+          <div>
             <i class="box-button__icon fa-regular fa-file-lines"></i>
           </div>
           <h2>Boletim Infoqueima</h2>
           <p>
             Download de boletim mensal de Monitoramento e Risco de Queimadas e
-            Incêndios Florestais
+            Incêndios Florestais.
           </p>
         </a>
 
@@ -339,7 +354,7 @@
           target="_blank"
           class="box-button"
         >
-          <div class="box-button__symbol">
+          <div>
             <i class="box-button__icon fa-regular fa-newspaper"></i>
           </div>
           <h2>Publicações e Impacto</h2>
@@ -348,23 +363,48 @@
             usam nossos dados e divulgações na mídia em geral.
           </p>
         </a>
+      </nav>
 
+      <!-- Outras Informações -->
+      <div class="tile-start-section">
+        <i class="fa-solid fa-circle-info"></i>
+      </div>
+      <nav aria-label="Mais Informações" class="box-button-container">
         <!-- Box FAQ -->
         <a
           href="http://terrabrasilis.dpi.inpe.br/queimadas/portal/faq/index.html"
-          class="box-button"
+          class="box-button--small"
         >
-          <div class="box-button__symbol">
-            <i class="fa-solid fa-clipboard-question box-button__icon"></i>
+          <div>
+            <i
+              class="fa-solid fa-clipboard-question box-button__icon--small"
+            ></i>
           </div>
           <h2>
             Perguntas Frequentes •
             <abbr title="Frequently Asked Questions">faq</abbr>
           </h2>
-          <p>
-            Detalhamento sobre os dados e atividades do Programa Queimadas do
-            INPE.
-          </p>
+        </a>
+        <!-- Box Equipe -->
+        <a
+          href="http://terrabrasilis.dpi.inpe.br/queimadas/portal/equipe/index.html"
+          class="box-button--small"
+        >
+          <div>
+            <i class="fa-solid fa-users box-button__icon--small"></i>
+          </div>
+          <h2>Equipe Queimadas</h2>
+        </a>
+
+        <!-- Box Plano Diretor -->
+        <a
+          href="http://terrabrasilis.dpi.inpe.br/queimadas/portal/plano-diretor/index.html"
+          class="box-button--small"
+        >
+          <div>
+            <i class="fa-solid fa-file-lines box-button__icon--small"></i>
+          </div>
+          <h2>Acompanhamento do Plano Diretor</h2>
         </a>
       </nav>
 

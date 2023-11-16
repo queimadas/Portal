@@ -362,6 +362,9 @@ footer > div {
 .mt-zero {
   margin-top: 0;
 }
+.mt-medium {
+  margin-top: 2rem;
+}
 .mb-zero {
   margin-bottom: 0;
 }
@@ -370,4 +373,8 @@ footer > div {
 }
 .mb-medium {
   margin-bottom: 2rem;
+}
+.img-left {
+  float: left;
+  margin: 0 2rem 1rem 0;
 }

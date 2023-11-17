@@ -1,6 +1,8 @@
 class panelData {
     #currentMonth;
     #currentYear;
+    #firstMonth = 1;
+    #firstYear = 2023;
     #dataUrl;
     #year;
     #month;
@@ -25,8 +27,8 @@ class panelData {
 
     #hasQuerystring() {
         const urlParams = new URLSearchParams(window.location.search);
-        const year = urlParams.get('year');
-        const month = urlParams.get('month');
+        const year = parseInt(urlParams.get('year'));
+        const month = parseInt(urlParams.get('month'));
         if(this.#isValidDate(month, year)) {
             this.#setMonth(month - 1);
             this.#setYear(year);
@@ -34,6 +36,7 @@ class panelData {
         }
         return false;
     }
+    
 
     #validNumber(value) {
         if(!isNaN(value)) {
@@ -132,12 +135,16 @@ class panelData {
                 if(this.#month == this.#currentMonth && this.#year == this.#currentYear) {
                     document.querySelector("#btn-next").classList.add("lastmonth");
                 }
+                if(this.#month == this.#firstMonth - 1 && this.#year == this.#firstYear) {
+                    document.querySelector("#btn-prev").classList.add("lastmonth");
+                }
                 this.#setQuerystring();
                 this.#setPanelHead();
                 this.#drawCharts();
                 this.#drawMaps();
             })
             .catch(error => {
+                console.error(`Não foi possível recuperar os dados de ${this.#getNumberMonth()}/${this.#year}.\n\n${error}`);
                 let newDt = new Date(this.#currentYear, this.#currentMonth, new Date().getDate());
 
                 if(this.#year == this.#currentYear && this.#month == this.#currentMonth) {
@@ -149,7 +156,6 @@ class panelData {
                 this.#currentYear = newDt.getFullYear();
                 this.#year = newDt.getFullYear();
                 this.#fetch();
-                console.error(`Não foi possível recuperar os dados de ${this.#getNumberMonth()}/${this.#year}.\n\n${error}`);
             });
     }
 
@@ -607,6 +613,8 @@ function generatePDF() {
 let panel = new panelData();
 
 document.querySelector("#btn-next").addEventListener("click", () => {
+    document.querySelector("#btn-next").classList.remove("lastmonth");
+    document.querySelector("#btn-prev").classList.remove("lastmonth");
     const monthsel = document.querySelector("#monthsel").innerHTML,
         yearsel = document.querySelector("#yearsel").innerHTML
     panel.changeCalendar(parseInt(monthsel) + 1, parseInt(yearsel));
@@ -614,6 +622,7 @@ document.querySelector("#btn-next").addEventListener("click", () => {
 
 document.querySelector("#btn-prev").addEventListener("click", () => {
     document.querySelector("#btn-next").classList.remove("lastmonth");
+    document.querySelector("#btn-prev").classList.remove("lastmonth");
     const monthsel = document.querySelector("#monthsel").innerHTML,
         yearsel = document.querySelector("#yearsel").innerHTML
     panel.changeCalendar(parseInt(monthsel) - 1, parseInt(yearsel));

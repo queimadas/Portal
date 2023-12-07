@@ -116,7 +116,7 @@ iframe {
   flex-grow: 1;
   display: flex;
   flex-direction: column;
-  justify-content: space-around;
+  /* justify-content: space-around; */
   max-width: var(--largura-max);
   margin: 0 auto;
   padding: 2rem 0;

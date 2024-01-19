@@ -365,6 +365,9 @@ footer > div {
 .mt-medium {
   margin-top: 2rem;
 }
+.mt-large {
+  margin-top: 4rem;
+}
 .mb-zero {
   margin-bottom: 0;
 }

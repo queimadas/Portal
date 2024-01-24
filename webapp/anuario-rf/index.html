@@ -109,80 +109,95 @@
     <main class="main-content pt-zero">
       <section>
         <h1 class="section-title">Anuário de Risco de Fogo</h1>
-        <p class="pb-short">Clique nos ícones para baixar as edições.</p>
+        <p class="pb-short">
+          O Anuário Preliminar contém os mapas de Risco de Fogo do ano corrente.
+          Mais abaixo, as edições completas dos anuários desde 2017.
+        </p>
         <article class="pb-short">
-        <div class="card">
-          <div class="card-header">
-            <h2>Anuário Preliminar</h2>
-            <span>
-              <button id="prev" title="Semana Anterior">&lt;</button>
-              <span> Semana <span id='week' class="button-week" title="Ver semanas"></span> de <span id="year"></span> </span>
-              <button id="next" title="Próxima Semana">&gt;</button>
-              <ul id="listWeeks" class="list-weeks hidden"></ul>
-            </span>
+          <div class="card">
+            <div class="card-header">
+              <h2>Anuário Preliminar • <span id="year"></span></h2>
+              <span>
+                <button id="prev" title="Semana Anterior">&lt;</button>
+                <span>
+                  Semana
+                  <span
+                    id="week"
+                    class="button-week"
+                    title="Ver semanas"
+                  ></span>
+                </span>
+                <button id="next" title="Próxima Semana">&gt;</button>
+                <ul id="listWeeks" class="list-weeks hidden"></ul>
+              </span>
+            </div>
+            <div class="card-body">
+              <div id="dt0" class="data">
+                <img width="274" height="333" />
+                <span class="dt"></span>
+              </div>
+              <div id="dt1" class="data">
+                <img width="274" height="333" />
+                <span class="dt"></span>
+              </div>
+              <div id="dt2" class="data">
+                <img width="274" height="333" />
+                <span class="dt"></span>
+              </div>
+              <div id="dt3" class="data">
+                <img width="274" height="333" />
+                <span class="dt"></span>
+              </div>
+              <div id="dt4" class="data">
+                <img width="274" height="333" />
+                <span class="dt"></span>
+              </div>
+              <div id="dt5" class="data">
+                <img width="274" height="333" />
+                <span class="dt"></span>
+              </div>
+              <div id="dt6" class="data">
+                <img width="274" height="333" />
+                <span class="dt"></span>
+              </div>
+              <div class="data">
+                <table class="leg">
+                  <tr>
+                    <td class="critico"></td>
+                    <td>Crítico</td>
+                  </tr>
+                  <tr>
+                    <td class="alto"></td>
+                    <td>Alto</td>
+                  </tr>
+                  <tr>
+                    <td class="medio"></td>
+                    <td>Médio</td>
+                  </tr>
+                  <tr>
+                    <td class="baixo"></td>
+                    <td>Baixo</td>
+                  </tr>
+                  <tr>
+                    <td class="minimo"></td>
+                    <td>Mínimo</td>
+                  </tr>
+                  <tr>
+                    <td class="indeterminado"></td>
+                    <td>Indeterminado</td>
+                  </tr>
+                </table>
+                <small>* atualizado diariamente</small>
+              </div>
+            </div>
           </div>
-          <div class="card-body">
-            <div id="dt0" class="data">
-              <img width="274" height="333"/>
-              <span class="dt"></span>
-            </div>
-            <div id="dt1" class="data">
-              <img width="274" height="333"/>
-              <span class="dt"></span>
-            </div>
-            <div id="dt2" class="data">
-              <img width="274" height="333"/>
-              <span class="dt"></span>
-            </div>
-            <div id="dt3" class="data">
-              <img width="274" height="333"/>
-              <span class="dt"></span>
-            </div>
-            <div id="dt4" class="data">
-              <img width="274" height="333"/>
-              <span class="dt"></span>
-            </div>
-            <div id="dt5" class="data">
-              <img width="274" height="333"/>
-              <span class="dt"></span>
-            </div>
-            <div id="dt6" class="data">
-              <img width="274" height="333"/>
-              <span class="dt"></span>
-            </div>
-            <div class="data">
-              <table class="leg">
-                <tr>
-                  <td class="critico"></td>
-                  <td>Crítico</td>
-                </tr>
-                <tr>
-                  <td class="alto"></td>
-                  <td>Alto</td>
-                </tr>
-                <tr>
-                  <td class="medio"></td>
-                  <td>Médio</td>
-                </tr>
-                <tr>
-                  <td class="baixo"></td>
-                  <td>Baixo</td>
-                </tr>
-                <tr>
-                  <td class="minimo"></td>
-                  <td>Mínimo</td>
-                </tr>
-                <tr>
-                  <td class="indeterminado"></td>
-                  <td>Indeterminado</td>
-                </tr>
-              </table>
-              <small>* atualizado diariamente</small>
-            </div>
+
+          <div class="tile-start-section">
+            <i class="fa-solid fa-file-pdf"></i>
           </div>
-        </div>
-          
-          <!-- <iframe src="preliminar.html" onload="resizeIframe(this);" ></iframe> -->
+          <p class="pb-short">
+            Clique nos ícones para baixar as edições completas.
+          </p>
 
           <table class="anuario__table" aria-label="PDFs dos Anuários">
             <thead>
@@ -293,13 +308,23 @@
     </footer>
     <script src="js/calendario.js" type="text/javascript"></script>
     <script>
-      loaded=0;
-      function checkLoaded(){
-        if(loaded>=document.querySelector("iframe").length-1){
+      loaded = 0;
+      function checkLoaded() {
+        if (loaded >= document.querySelector("iframe").length - 1) {
           document.querySelector(".loader").hide();
         }
       }
-      function resizeIframe(obj){try{obj.style.height = obj.contentWindow.document.body.scrollHeight + 'px';}catch(e){console.log("erro:",e)}finally{loaded++;checkLoaded();}}
+      function resizeIframe(obj) {
+        try {
+          obj.style.height =
+            obj.contentWindow.document.body.scrollHeight + "px";
+        } catch (e) {
+          console.log("erro:", e);
+        } finally {
+          loaded++;
+          checkLoaded();
+        }
+      }
     </script>
   </body>
 </html>

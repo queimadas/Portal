@@ -4,7 +4,7 @@
 }
 
 .card-header {
-  /* position:absolute; */
+  position:relative;
   display: flex;
   box-sizing: border-box;
   flex-direction: column;
@@ -63,6 +63,7 @@
   align-items: flex-start;
   padding: 0.5rem;
   margin: 1rem 0 0 0;
+  z-index: 0;
 }
 
 .data {

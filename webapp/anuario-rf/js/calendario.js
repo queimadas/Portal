@@ -255,17 +255,18 @@ const prevClick = () => {
 }
 
 document.addEventListener('click', function(event) {
-    event.preventDefault();
-
     if (event.target.matches('#next')) {
+        event.preventDefault();
         nextClick()
     } 
     
     if(event.target.matches('#week')) {
+        event.preventDefault();
         showWeeksList();
     }
     
     if(event.target.matches('#listWeeks li')) {
+        event.preventDefault();
         showWeeksList();
         stopLoadings();
         showing_week = event.target.value;
@@ -273,6 +274,7 @@ document.addEventListener('click', function(event) {
     }
 
     if(event.target.matches('#prev')) {
+        event.preventDefault();
         prevClick();
     }
 }, false);

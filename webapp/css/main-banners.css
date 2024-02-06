@@ -42,12 +42,15 @@
   margin-bottom: 0;
 }
 
-/* Static Main Banner  */
+/* Static Main Banner Image */
 .main-banner-image {
   display: flex;
   flex-direction: column;
-  align-items: center;
+  align-items: end;
   padding: 0;
+}
+.main-banner-image img {
+  width: 135%;
 }
 
 /* Animated Main Banner */
@@ -143,6 +146,10 @@
 /* Media Queries for Large Screens =========================================================================== */
 @media (min-width: 1024px) {
   /* Static Main Banner */
+  .main-banner-image img {
+    width: 100%;
+  }
+
   .main-banner-content {
     flex-direction: row;
     column-gap: 1rem;

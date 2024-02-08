@@ -49,7 +49,7 @@ class panelData {
             return false;
         }
 
-        if(year === this.#currentYear) {
+        if(year === 2023) {
             return month >= 0 && month <= this.#currentMonth;
         }
         return this.#isValidMonth(month);

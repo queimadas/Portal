@@ -17,10 +17,10 @@ class panelData {
         this.#currentYear = dtPanel.getFullYear();
 
         this.#dataUrl = "json/[year][month].json";
-        if(!this.#hasQuerystring()) {
-            this.#setMonth(this.#currentMonth);
-            this.#setYear(this.#currentYear);
-        }
+        // if(!this.#hasQuerystring()) {
+        //     this.#setMonth(this.#currentMonth);
+        //     this.#setYear(this.#currentYear);
+        // }
     }
 
     #hasQuerystring() {
@@ -44,35 +44,42 @@ class panelData {
         return false;
     }
 
-    #isValidDate(month, year) {
-        if(! this.#isValidYear(year)) {
-            return false;
+    #verifyLimits(dt) {
+        if(dt.year === this.#currentYear && dt.month >= this.#currentMonth){
+            document.querySelector("#btn-next").classList.add("limit");
         }
+        if(dt.year === 2003 && dt.month <= 1){
+            document.querySelector("#btn-prev").classList.add("limit");
+        }
+    }
 
-        if(year === 2023) {
-            return month >= 0 && month <= this.#currentMonth;
-        }
-        return this.#isValidMonth(month);
+    #isValidDate(month, year) {
+        let ret = true
+        if((year === this.#currentYear && month > this.#currentMonth) || (year == 2023 && month <= 0)){
+            ret = false
+        };
+        return ret;
     }
     #isValidMonth(month) {
+        let ret = false
         if(this.#validNumber(month)) {
-            return month >= 0 && month < 12;
+            ret = (month >= 0 && month <= 13);
         }
-        return false;
+        return ret;
     }
 
     #isValidYear(value) {
+        let ret = false
         if(this.#validNumber(value)) {
-            return value > 1998 && value <= this.#currentYear;
+            ret = (value > 2022 && value <= this.#currentYear);
         }
-        return false;
+        return ret;
     }
 
     #getNumberMonth() {
         let numberMonth = this.#month + 1;
-        if(numberMonth < 10) {
-            numberMonth = "0" + numberMonth;
-        }
+
+        numberMonth = `0${numberMonth}`.slice(-2);
         return numberMonth;        
     }
 
@@ -117,11 +124,21 @@ class panelData {
     }
 
     changeCalendar(month, year) {
-        if(this.#isValidDate(month - 1, year)) {
+        console.log(month, year,this.#isValidYear(year), this.#isValidMonth(month))
+        if(this.#isValidYear(year) && this.#isValidMonth(month)) {
+            let dt = new Date(year, month - 1, 1);
+            month = dt.getMonth() + 1;
+            year = dt.getFullYear();
+        }
+        if(this.#isValidDate(month, year)) {
             this.#setMonth(month - 1);
             this.#setYear(year);
-            this.#fetch();
+        } else {
+            console.error("A data de entrada é inválida");
+            this.#setMonth(this.#currentMonth);
+            this.#setYear(this.#currentYear);
         }
+        this.#fetch();        
     }
 
     #fetch() {
@@ -130,7 +147,7 @@ class panelData {
             .then(data => {
                 this.#data = data;
                 if(this.#month == this.#currentMonth && this.#year == this.#currentYear) {
-                    document.querySelector("#btn-next").classList.add("lastmonth");
+                    document.querySelector("#btn-next").classList.add("limit");
                 }
                 this.#setQuerystring();
                 this.#setPanelHead();
@@ -310,27 +327,24 @@ class panelData {
                     pageWidth = document.body.clientWidth,
                     objHeight = parseInt(el.style.height.replace("px", "")),
                     objWidth = parseInt(el.style.width.replace("px", ""));
-                let size = 16;
+
                 ctx.save();
 
-                if (pageWidth < 1100) {
-                    size = 14;
-                }
-                if (pageWidth < 1024) {
-                    size = 20;
-                }
-                if (pageWidth < 768) {
-                    size = 30;
-                }
-                if (pageWidth < 500) {
-                    size = 25;
-                }
-                if (pageWidth < 400) {
-                    size = 20;
-                }
+                let size = 16;
                 if (pageWidth < 240) {
                     size = 14;
+                } else if (pageWidth < 400) {
+                    size = 20;
+                } else if (pageWidth < 500) {
+                    size = 25;
+                } else if (pageWidth < 768) {
+                    size = 30;
+                } else if (pageWidth < 1024) {
+                    size = 20;
+                } else if (pageWidth < 1100) {
+                    size = 14;
                 }
+
                 ctx.font= `600 ${size}px Montserrat`;
                 ctx.textBaseline="middle";
                 ctx.textAlign = "center";
@@ -554,72 +568,33 @@ class panelData {
         this.#drawFireriskMap();
     }
 
-    loadData(year, month) {
-        this.#setMonth(month);
-        this.#setYear(year);
-        this.#fetch();
+    loadData() {
+        const urlParams = new URLSearchParams(window.location.search);
+        const param = {year:urlParams.get('year'), month: urlParams.get('month')}
+        this.changeCalendar(parseInt(param.month), parseInt(param.year))
     }
 };
 
-
-
-function generatePDF() {
-    let doc = new jsPDF({
-        unit: 'mm',
-        format: 'a4',
-        orientation: "landscape",
-        putOnlyUsedFonts:true
-    });
-    document.querySelector('.btn-group').style.display = 'none';
-    doc.html(
-         document.body,
-         {
-            callback: function (doc) {
-                document.querySelector('.btn-group').style.display = "";
-                doc.output("dataurlnewwindow");
-            },
-            fontFaces: [
-                {
-                    family:'Bebas Neue',
-                    src: [{url:'fonts/BebasNeue-Regular.ttf', format:'truetype'}]
-                },
-                {
-                    family:'Montserrat',
-                    src: [{url:'fonts/Montserrat-Regular.ttf', format:'truetype'}, {url:'fonts/Montserrat-Bold.ttf', format:'truetype'}]
-                }
-            ],
-            html2canvas: {
-                allowTaint: true,
-                useCORS: true,
-                // logging: true,
-                imageTimeout: 40000,
-                // w: 841.89,
-                // h: 595.28,
-                x: 0,
-                y:0,
-                scale:.15
-            }
-        }
-    );
-    // doc.save("two-by-four.pdf");
-}
-
-let panel = new panelData();
-
-document.querySelector("#btn-next").addEventListener("click", () => {
+document.querySelector("#btn-next").addEventListener("click", (e) => {
+    if(e.target.classList.contains('limit')) return
+    document.querySelector("#btn-prev").classList.remove("limit");
     const monthsel = document.querySelector("#monthsel").innerHTML,
-        yearsel = document.querySelector("#yearsel").innerHTML
-    panel.changeCalendar(parseInt(monthsel) + 1, parseInt(yearsel));
+        yearsel = document.querySelector("#yearsel").innerHTML;
+
+        panel.changeCalendar(parseInt(monthsel) + 1, parseInt(yearsel));
 })
 
-document.querySelector("#btn-prev").addEventListener("click", () => {
-    document.querySelector("#btn-next").classList.remove("lastmonth");
+document.querySelector("#btn-prev").addEventListener("click", (e, o) => {
+    if(e.target.classList.contains('limit')) return
+    document.querySelector("#btn-next").classList.remove("limit");
     const monthsel = document.querySelector("#monthsel").innerHTML,
-        yearsel = document.querySelector("#yearsel").innerHTML
+        yearsel = document.querySelector("#yearsel").innerHTML;
+
     panel.changeCalendar(parseInt(monthsel) - 1, parseInt(yearsel));
 
 })
 
 window.onload = function() {
+    const panel = new panelData();
     panel.loadData();
 };

@@ -306,10 +306,10 @@ main > div {
   padding: .3rem .3rem .2rem .3rem;
 }
 
-.btn-group > button.lastmonth,
-.btn-group > button.lastmonth:hover {
-  background-color:#d7d7d7;
-  cursor: default;
+.btn-group > button.limit,
+.btn-group > button.limit:hover {
+  background-color:#d7d7d7 !important;
+  cursor: default !important;
 }
 .btn-primary {
   color: #fff;

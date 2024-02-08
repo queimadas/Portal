@@ -124,7 +124,6 @@ class panelData {
     }
 
     changeCalendar(month, year) {
-        console.log(month, year,this.#isValidYear(year), this.#isValidMonth(month))
         if(this.#isValidYear(year) && this.#isValidMonth(month)) {
             let dt = new Date(year, month - 1, 1);
             month = dt.getMonth() + 1;
@@ -594,7 +593,7 @@ document.querySelector("#btn-prev").addEventListener("click", (e, o) => {
 
 })
 
+const panel = new panelData();
 window.onload = function() {
-    const panel = new panelData();
     panel.loadData();
 };

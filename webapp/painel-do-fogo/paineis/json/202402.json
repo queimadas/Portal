@@ -43,7 +43,7 @@
         ],
         "daily": [
             {"name": "1", "value": 86},
-            {"name": "2", "value": 00},
+            {"name": "2", "value": 0},
             {"name": "3", "value": 206},
             {"name": "4", "value": 54},
             {"name": "5", "value": 162},
